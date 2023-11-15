@@ -9,7 +9,6 @@ def main(argv):
         sys.exit(2)
 
     for i, arg in enumerate(argv):
-        print(argv[i+1])
         if i+1 > len(argv):
             print(f"Missing argument after flag {argv}")
             sys.exit(2)
@@ -27,7 +26,9 @@ def main(argv):
         elif arg == '--all':
             print(f"All")
             for file in p.find_all_files():
-                p.parse_file(file)
+                print(file)
+                graph, red_keys,s,t, is_directed = p.parse_file(file)
+                delegate_problem(graph, red_keys,s,t, is_directed)
             break
         else:
             print("Invalid option")
@@ -36,6 +37,7 @@ def main(argv):
 def delegate_problem(graph, red_keys, s, t, is_directed):
     # solve for None
     print("None:", none.check_none_problem(graph, red_keys,s,t))
+    print("Alternate:", alternate.check_alternate_problem(graph, red_keys,s,t))
     print("Few:", few.check_few_problem(graph, red_keys,s,t))
     visualize(graph, red_keys, s, t, is_directed)
 
