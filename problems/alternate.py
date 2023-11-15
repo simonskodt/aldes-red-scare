@@ -2,9 +2,9 @@ def check_alternate_problem(graph,red_keys,s,t):
     graph = remove_odd(graph, red_keys, s,t)
     path = bfs(graph,s,t)
     if path is None:
-        return -1
+        return False
     else:
-        return len(path)
+        return True
     
 def remove_odd(g, red_keys, s,t):
     if s not in g:
@@ -14,7 +14,7 @@ def remove_odd(g, red_keys, s,t):
     new_g = {}
     while len(queue) > 0:
         v = queue.pop(0)
-        if v in g[v]:
+        if v in g:
             w = g[v]
             visited.append(v)
             is_red = v in red_keys
@@ -38,7 +38,7 @@ def bfs(g, start, end):
         (v, path) = queue.pop(0)
         if v == end:
             return path
-        if v in g[v]:
+        if v in g:
             w = g[v]
             for (adjacentV, w) in w.items():
                 if adjacentV not in explored:

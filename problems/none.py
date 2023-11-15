@@ -5,7 +5,7 @@ def check_none_problem(g,red_keys,s,t):
     if path is None:
         return -1
     else:
-        return len(path)
+        return len(path)-1
 
 def remove_red(graph, red_keys):
     for key in red_keys:
