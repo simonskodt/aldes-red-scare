@@ -21,7 +21,7 @@ def main(argv):
         elif arg == '--file':
             print(f"File: {argv[i+1]}")
             graph, red_keys,s,t, is_directed = p.parse_file(argv[i+1])
-            delegate_problem(graph, red_keys,s,t, is_directed)
+            delegate_problem(graph, red_keys,s,t, is_directed, True)
             break
         elif arg == '--all':
             print(f"All")
@@ -34,12 +34,13 @@ def main(argv):
             print("Invalid option")
             sys.exit(2)
 
-def delegate_problem(graph, red_keys, s, t, is_directed):
+def delegate_problem(graph, red_keys, s, t, is_directed, should_visualize=False):
     # solve for None
     print("None:", none.check_none_problem(graph, red_keys,s,t))
     print("Alternate:", alternate.check_alternate_problem(graph, red_keys,s,t))
     print("Few:", few.check_few_problem(graph, red_keys,s,t))
-    visualize(graph, red_keys, s, t, is_directed)
+    if should_visualize:
+        visualize(graph, red_keys, s, t, is_directed)
 
 def visualize(graph, red_keys, s, t, is_directed):
     gv.visualize(graph, red_keys, s, t, is_directed)
