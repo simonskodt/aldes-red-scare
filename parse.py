@@ -42,10 +42,10 @@ def parse_graph(lines):
 
     for i in range(n):
         vertex = lines[i+2]
-        name = re.search("[_a-z0-9]+", vertex).string
-        
+        (regFrom, regTo) = re.search("[_a-z0-9]+", vertex).span()
+        name = vertex[regFrom:regTo]
         # if vertex is red, insert in red keys
-        if "*" in name:
+        if "*" in vertex:
             red_keys.append(name)
         
     for i in range(m):
