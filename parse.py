@@ -30,6 +30,7 @@ def add_edge_to_graph(g, f, t):
 def parse_graph(lines):
     graph = {}
     red_keys = []
+    is_directed = False
 
     # n: number of vertices
     # m: number of edges
@@ -60,9 +61,10 @@ def parse_graph(lines):
             graph = add_edge_to_graph(graph, from_v, to_v)
             graph = add_edge_to_graph(graph, to_v, from_v)
         elif directed_search is not None:
+            is_directed = True
             from_v = undirected_search.group("from")
             to_v = undirected_search.group("to")
             graph = add_edge_to_graph(graph, from_v, to_v)
         else:
             print("Unknown edge", edge)
-    return graph, red_keys, s, t
+    return graph, red_keys, s, t, is_directed

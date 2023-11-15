@@ -20,8 +20,8 @@ def main(argv):
             break
         elif arg == '--file':
             print(f"File: {argv[i+1]}")
-            graph, red_keys,s,t = p.parse_file(argv[i+1])
-            delegate_problem(graph, red_keys,s,t)
+            graph, red_keys,s,t, is_directed = p.parse_file(argv[i+1])
+            delegate_problem(graph, red_keys,s,t, is_directed)
             break
         elif arg == '--all':
             print(f"All")
@@ -33,7 +33,7 @@ def main(argv):
             sys.exit(2)
 
 
-def delegate_problem(graph, red_keys, s, t):
+def delegate_problem(graph, red_keys, s, t, is_directed):
     # solve for None
     print("None:", none.check_none_problem(graph, red_keys,s,t))
 
