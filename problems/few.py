@@ -4,12 +4,13 @@ def check_few_problem(g,red_keys,s,t):
     graph = g.copy()
     # update weights in graph. Outgoing edges from red vertices must be 1
     for key in red_keys:
-        for adj in graph[key]:
-            graph[key][adj] = 1
+        if key in graph:
+            for adj in graph[key]:
+                graph[key][adj] = 1
 
     # run dijkstra
     dist = dijkstra(graph, s, t)
-    if dist[t] == float("inf"):
+    if t not in dist or dist[t] == float("inf"):
         return -1
     else:
         return dist[t]
@@ -31,9 +32,10 @@ def dijkstra(graph, s, t):
         (d, v) = pq.get()
         if d > dist[v]:
             continue
-        for (adj, w) in graph[v].items():
-            if adj not in visited and dist[v] + w < dist[adj]:
-                visited.append(adj)
-                dist[adj] = dist[v] + w
-                pq.put((dist[adj], adj))
+        if v in graph:
+            for (adj, w) in graph[v].items():
+                if adj not in visited and adj in graph and dist[v] + w < dist[adj]:
+                    visited.append(adj)
+                    dist[adj] = dist[v] + w
+                    pq.put((dist[adj], adj))
     return dist

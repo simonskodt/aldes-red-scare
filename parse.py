@@ -19,7 +19,8 @@ def find_files(prefix_file_name):
     
 def find_all_files():
     files = [file for file in os.listdir("data/") if file.endswith(".txt")]
-    return files
+    sorted_files = sorted(files)
+    return sorted_files
 
 def add_edge_to_graph(g, f, t):
     if f not in g:
@@ -51,8 +52,8 @@ def parse_graph(lines):
     for i in range(m):
         edge = lines[i+n+2]
         # Do not touch
-        undirected_regex = r"(?P<from>[_a-z0-9])+\s\-\-\s(?P<to>[_a-z0-9]+)"
-        directed_regex = r"(?P<from>[_a-z0-9])+\s\-\>\s(?P<to>[_a-z0-9]+)"
+        undirected_regex = r"(?P<from>[_a-z0-9]+)\s\-\-\s(?P<to>[_a-z0-9]+)"
+        directed_regex = r"(?P<from>[_a-z0-9]+)\s\-\>\s(?P<to>[_a-z0-9]+)"
         undirected_search = re.search(undirected_regex, edge)
         directed_search = re.search(directed_regex, edge)
         if undirected_search is not None:

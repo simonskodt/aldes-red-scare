@@ -7,7 +7,6 @@ def check_alternate_problem(graph,red_keys,s,t):
         return len(path)
     
 def remove_odd(g, red_keys, s,t):
-    print(s,t)
     if s not in g:
         return None
     visited = [s]

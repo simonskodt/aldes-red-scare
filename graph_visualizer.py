@@ -11,6 +11,9 @@ def get_graph_type(directed):
   
 # Driver code
 def visualize(graph, red_keys, s, t, directed=False):
+    # if directed:
+    #     return None
+    
     G = get_graph_type(directed)
     labels = {}
 

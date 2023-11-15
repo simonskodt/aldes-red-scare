@@ -8,8 +8,9 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": [
+                "--visualize",
                 "--file",
-                "gnm-10-20-1"
+                "increase-n10-1"
             ]
         }
     ]
