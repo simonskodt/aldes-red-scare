@@ -1,0 +1,23 @@
+Instance name, n, A, F, M, N, S
+G-ex.txt, 8, True, 0, 3
+P3.txt, 3, True, 1, -1
+bht.txt, 5086, False, 0, 6
+common-1-100.txt, 12, False, -1, -1
+common-1-1000.txt, 586, False, -1, -1
+common-1-1500.txt, 1009, False, -1, -1
+common-1-20.txt, 0, False, -1, -1
+common-1-2000.txt, 1486, False, -1, -1
+common-1-250.txt, 60, False, -1, -1
+common-1-2500.txt, 1966, False, 0, 6
+common-1-3000.txt, 2480, False, 0, 6
+common-1-3500.txt, 2984, False, 0, 6
+common-1-4000.txt, 3477, False, 1, 6
+common-1-4500.txt, 3980, True, 1, 6
+common-1-50.txt, 2, False, -1, -1
+common-1-500.txt, 191, False, -1, -1
+common-1-5000.txt, 4496, True, 0, 6
+common-1-5757.txt, 5264, True, 0, 6
+common-2-100.txt, 72, False, -1, -1
+common-2-1000.txt, 978, True, 1, 4
+common-2-1500.txt, 1481, True, 1, 4
+common-2-20.txt, 6, False, -1, -1
