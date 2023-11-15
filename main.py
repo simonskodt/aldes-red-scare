@@ -1,6 +1,7 @@
 import sys
 import parse as p
-from problems import none, some, many, few, alternate
+from problems import none, some, many, few, alternate   
+import graph_visualizer as gv
 
 def main(argv):
     if len(argv) == 0:
@@ -32,10 +33,14 @@ def main(argv):
             print("Invalid option")
             sys.exit(2)
 
-
 def delegate_problem(graph, red_keys, s, t, is_directed):
     # solve for None
     print("None:", none.check_none_problem(graph, red_keys,s,t))
+    print("Few:", few.check_few_problem(graph, red_keys,s,t))
+    visualize(graph, red_keys, s, t, is_directed)
+
+def visualize(graph, red_keys, s, t, is_directed):
+    gv.visualize(graph, red_keys, s, t, is_directed)
 
 if __name__ == "__main__":
     sys.path.insert(1, 'problems/')

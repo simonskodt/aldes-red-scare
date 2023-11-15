@@ -1,4 +1,5 @@
-def check_none_problem(graph,red_keys,s,t):
+def check_none_problem(g,red_keys,s,t):
+    graph = g.copy()
     graph = remove_red(graph, red_keys)
     path = bfs(graph,s,t)
     if path is None:
