@@ -22,7 +22,7 @@ def bfs(g, start, end):
         (v, path) = queue.pop(0)
         if v == end:
             return path
-        if v in g[v]:
+        if v in g:
             w = g[v]
             for (adjacentV, w) in w.items():
                 if adjacentV not in explored:

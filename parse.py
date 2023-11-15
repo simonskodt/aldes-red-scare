@@ -38,7 +38,7 @@ def parse_graph(lines):
     n, m, r = map(int, lines[0].split())
 
     # s: start vertex, t: end vertex
-    s, t = lines[1].split()
+    s, t = map(str, lines[1].split())
 
     for i in range(n):
         vertex = lines[i+2]
@@ -56,14 +56,14 @@ def parse_graph(lines):
         undirected_search = re.search(undirected_regex, edge)
         directed_search = re.search(directed_regex, edge)
         if undirected_search is not None:
-            from_v = undirected_search.group("from")
-            to_v = undirected_search.group("to")
+            from_v = str(undirected_search.group("from"))
+            to_v = str(undirected_search.group("to"))
             graph = add_edge_to_graph(graph, from_v, to_v)
             graph = add_edge_to_graph(graph, to_v, from_v)
         elif directed_search is not None:
             is_directed = True
-            from_v = directed_search.group("from")
-            to_v = directed_search.group("to")
+            from_v = str(directed_search.group("from"))
+            to_v = str(directed_search.group("to"))
             graph = add_edge_to_graph(graph, from_v, to_v)
         else:
             print("Unknown edge", edge)
