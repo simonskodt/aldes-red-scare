@@ -1,6 +1,8 @@
 def check_alternate_problem(graph,red_keys,s,t):
     graph = remove_odd(graph, red_keys, s,t)
+    print("remo")
     path = bfs(graph,s,t)
+    print(path)
     if path is None:
         return False
     else:
@@ -9,23 +11,22 @@ def check_alternate_problem(graph,red_keys,s,t):
 def remove_odd(g, red_keys, s,t):
     if s not in g:
         return None
-    visited = [s]
+    visited = {s}
     queue = [s]
     new_g = {}
-    while len(queue) > 0:
+    while queue:
         v = queue.pop(0)
         if v in g:
-            w = g[v]
-            visited.append(v)
             is_red = v in red_keys
-            for (adjacentV, w) in w.items():
+            for adjacentV, w in g[v].items():
                 if (adjacentV in red_keys) != is_red:
                     if v not in new_g:
                         new_g[v] = {}
                     new_g[v][adjacentV] = 0
                     if adjacentV not in visited:
+                        visited.add(adjacentV)
                         queue.append(adjacentV)
-    #print(new_g)
+
     return new_g
 
 # Based on code from old Kattis exercise: https://github.com/PhilipFlyvholm/kattis/blob/main/Waif/Waif.py#L51
@@ -43,7 +44,5 @@ def bfs(g, start, end):
             for (adjacentV, w) in w.items():
                 if adjacentV not in explored:
                     explored.append(adjacentV)
-                    localPath = path.copy()
-                    localPath.append(adjacentV)
-                    queue.append((adjacentV, localPath))
+                    queue.append((adjacentV, path + [adjacentV]))
     return None
