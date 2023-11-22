@@ -55,7 +55,7 @@ def main(argv):
             for file in p.find_all_files():
                 print(f"-- {file} --")
                 graph, red_keys,s,t, is_directed = p.parse_file(file)
-                if len(graph) > 500:
+                if len(graph) >= 500:
                     delegate_problem(graph, red_keys,s,t, is_directed, file)
             break
         else:
@@ -99,6 +99,7 @@ def delegate_problem(graph, red_keys, s, t, is_directed, instance_name):
     
     s_start_time = time.time()
     S = some.check_some_problem(graph, red_keys,s,t, is_directed)
+    
     elapsed_time_S = printTimeTaken(s_start_time, "S", instance_name)
     s_string = f"Some: {S} with elapsed time: {elapsed_time_S}\n"
     print(s_string)
