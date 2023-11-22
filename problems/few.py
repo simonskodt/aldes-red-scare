@@ -1,6 +1,6 @@
 from queue import PriorityQueue 
 
-def check_few_problem(g,red_keys,s,t):
+def check_few_problem(g, red_keys, s, t):
     graph = g.copy()
     # update weights in graph. Outgoing edges from red vertices must be 1
     for key in red_keys:
