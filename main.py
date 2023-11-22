@@ -19,8 +19,7 @@ def main(argv):
     log_file = open("log.txt", "w")
 
     if len(argv) == 0:
-        print(f"Provide a flag to run program\nE.g.")
-        sys.exit(2)
+        print_instructions()
 
     for i, arg in enumerate(argv):
         if i+1 > len(argv):
@@ -30,12 +29,8 @@ def main(argv):
         if arg == '--visualize':
             should_visualize = True
             continue
-
-        if arg == '--prefix':
-            print(f"Prefix: {argv[i+1]}")
-            # for file in p.find_files(arg[i+1]):
-            #     p.parse_file(file)
-            break
+        elif arg == '--help':
+            print_instructions
         elif arg == '--file':
             file = argv[i+1]
             print(f"File: {file}")
@@ -65,6 +60,14 @@ def main(argv):
     results_file.close()
     log_file.close()
 
+def print_instructions():
+    print(f"Provide a flag to run program: python --...")
+    print("E.g.")
+    print("\t--visualize (to visualize the graph)") 
+    print("\t--file { file_name } (provide the file name without the path")
+    print("\t--files { file_name_1 } { ... } { file_name_n } (multiple files)")
+    print("\t--all (run all implementations on files with n >= 500)")
+    sys.exit(2)
 
 def printTimeTaken(start_time, problem, instance_name):
     end_time = (time.time() - start_time)
@@ -74,7 +77,6 @@ def printTimeTaken(start_time, problem, instance_name):
         return f"{problem} took: {round(end_time,2)}s for {instance_name}"
 
 # Test cases: bht,common-1-5757,common-2-5757,gnm-5000-10000-0,gnm-5000-10000-1,dodecahedron,grid-50-0,grid-50-1,grid-50-2,increase-n-500-1,increase-n-500-2,increase-n-500-3,p3,rusty-1-5757,rusty-2-5757,ski-level20-1,ski-level20-2,ski-level20-3,small-world-50-0,small-world-50-1,wall-n-10000,wall-p-10000,wall-z-10000
-
 
 def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_directed_edges):
     header_for_print = f"---- Instance: {instance_name}, n: {len(graph)} ----\n"
