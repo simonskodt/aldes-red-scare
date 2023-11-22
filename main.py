@@ -35,23 +35,23 @@ def main(argv):
             file = argv[i+1]
             print(f"File: {file}")
 
-            graph, red_keys,s,t, is_directed, has_incoming_edges = p.parse_file(file)
-            delegate_problem(graph, red_keys,s,t, is_directed, has_incoming_edges, file)
+            graph, red_keys,s,t, is_directed, has_no_incoming_edges = p.parse_file(file)
+            delegate_problem(graph, red_keys,s,t, is_directed, has_no_incoming_edges, file)
             break
         elif arg == '--files':
             files = argv[i+1].split(",")
             print(f"File: {files}")
             for file in files:
-                graph, red_keys,s,t, is_directed, has_incoming_edges = p.parse_file(file)
-                delegate_problem(graph, red_keys,s,t, is_directed, has_incoming_edges, file)
+                graph, red_keys,s,t, is_directed, has_no_incoming_edges = p.parse_file(file)
+                delegate_problem(graph, red_keys,s,t, is_directed, has_no_incoming_edges, file)
             break
         elif arg == '--all':
             print(f"All:\n")
             for file in p.find_all_files():
                 print(f"-- {file} --")
-                graph, red_keys, s, t, is_directed, has_incoming_edges = p.parse_file(file)
+                graph, red_keys, s, t, is_directed, has_no_incoming_edges = p.parse_file(file)
                 if len(graph) >= 500:
-                    delegate_problem(graph, red_keys, s, t, is_directed, has_incoming_edges, file)
+                    delegate_problem(graph, red_keys, s, t, is_directed, has_no_incoming_edges, file)
             break
         else:
             print("Invalid option")
@@ -78,7 +78,7 @@ def printTimeTaken(start_time, problem, instance_name):
 
 # Test cases: bht,common-1-5757,common-2-5757,gnm-5000-10000-0,gnm-5000-10000-1,dodecahedron,grid-50-0,grid-50-1,grid-50-2,increase-n-500-1,increase-n-500-2,increase-n-500-3,p3,rusty-1-5757,rusty-2-5757,ski-level20-1,ski-level20-2,ski-level20-3,small-world-50-0,small-world-50-1,wall-n-10000,wall-p-10000,wall-z-10000
 
-def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_directed_edges):
+def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_no_directed_edges):
     header_for_print = f"---- Instance: {instance_name}, n: {len(graph)} ----\n"
     a_start_time = time.time()
     A = alternate.check_alternate_problem(graph, red_keys,s,t)
@@ -100,7 +100,7 @@ def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_dire
     print(n_string)
     
     s_start_time = time.time()
-    S = some.check_some_problem(graph, red_keys, s, t, is_directed, has_directed_edges)
+    S = some.check_some_problem(graph, red_keys, s, t, is_directed, has_no_directed_edges)
     elapsed_time_S = printTimeTaken(s_start_time, "S", instance_name)
     s_string = f"Some: {S} with elapsed time: {elapsed_time_S}\n"
     print(s_string)
