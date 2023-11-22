@@ -5,7 +5,7 @@ def check_some_problem(g, red_keys, s, t, is_directed, has_no_incoming_edges):
         return undirected_solve(g, red_keys, s, t, is_directed)
     elif is_DAG(g, has_no_incoming_edges):
         graph = augment_graph(g, red_keys, s, t)
-        return bellman_ford(graph)
+        # return bellman_ford(graph)
     
     return "?" # NP-Hard
 
@@ -115,7 +115,7 @@ def augment_graph(g, red_keys, s, t):
             
     return graph
 
-def is_DAG(g, has_incoming_edge):
+def is_DAG(g, has_no_incoming_edge):
     """
     Determines whether the given graph is a Directed Acyclic Graph (DAG).
     Inspired by psudo-implementation, found at this url:
@@ -126,11 +126,16 @@ def is_DAG(g, has_incoming_edge):
     """
     graph = g.copy()
     topological_order = []
-    nodes_with_no_incoming_edge = has_incoming_edge.copy()
-    # while nodes_with_no_incoming_edge:
-        # nodes_with_no_incoming_edge:dict.pop
-    
-
+    vertecis_with_no_incoming_edge = has_no_incoming_edge.copy()
+    while vertecis_with_no_incoming_edge:
+        vertex = vertecis_with_no_incoming_edge.pop()
+        topological_order.append(vertex)
+        for key in graph[vertex]:
+            return 0
+def has_incoming_edge(vertex, graph):
+    for key in graph:
+        if graph[key][vertex] is None:
+            # no incoming
 def bellman_ford(graph):
     return 0
 
