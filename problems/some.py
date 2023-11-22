@@ -3,8 +3,9 @@ import parse as parse_util
 def check_some_problem(g, red_keys, s, t, is_directed):
     if not is_directed:
         return undirected_solve(g, red_keys, s, t, is_directed)
-    elif is_DAG():
-        return bellman_ford()
+    elif is_DAG(g, red_keys, s, t):
+        graph = augment_graph(g, red_keys, s, t)
+        return bellman_ford(graph)
     
     return "?" # NP-Hard
 
@@ -25,7 +26,18 @@ def build_base_graph(graph, s,t):
 
 # ------------------ BELLMAN-FORD ------------------ #
 
-def is_DAG():
+def augment_graph(g, red_keys, s, t):
+    graph = g.copy()
+    red_keys = red_keys.copy()
+
+    for key in red_keys:
+        if key in graph:
+            for adj in graph[key]:
+                graph[key][adj] = 1
+
+    return graph
+
+def is_DAG(g):
     """
     Determines whether the given graph is a Directed Acyclic Graph (DAG).
     Inspired by psudo-implementation, found at this url:
@@ -34,8 +46,11 @@ def is_DAG():
     Returns:
         bool: True if the graph is a DAG, False otherwise.
     """
-    raise NotImplementedError("longest path")
+    graph = g.copy()
+    topological_order = []
+    nodes_with_no_incoming_edge = {}
+    # graph.
 
-def longest_path(g, ):
-    raise NotImplementedError("longest patimport parse as parseUtil
+def bellman_ford(graph):
+    return 0
 
