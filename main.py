@@ -98,8 +98,7 @@ def delegate_problem(graph, red_keys, s, t, is_directed, instance_name):
     print(n_string)
     
     s_start_time = time.time()
-    #S = some.check_some_problem(graph, red_keys,s,t, is_directed)
-    S = 5
+    S = some.check_some_problem(graph, red_keys,s,t, is_directed)
     elapsed_time_S = printTimeTaken(s_start_time, "S", instance_name)
     s_string = f"Some: {S} with elapsed time: {elapsed_time_S}\n"
     print(s_string)
