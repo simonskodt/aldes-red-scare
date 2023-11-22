@@ -1,23 +1,29 @@
-def check_many_problem(g, red_keys, s, t):
-    """
-    Check if the given graph is able to be solved.
+import parse as parse_util
 
-    Args:
-        g (Graph): The input graph.
-        red_keys (list): List of red keys.
-        s (int): Source node.
-        t (int): Target node.
-
-    Returns:
-        int: The length of the longest path from source to target if the graph 
-            is a DAG, -1 otherwise.
-    """
-    graph = g.copy()
-    if (is_DAG):
-        return longest_path(graph)
+def check_some_problem(g, red_keys, s, t, is_directed):
+    if not is_directed:
+        return undirected_solve(g, red_keys, s, t, is_directed)
+    elif is_DAG():
+        return bellman_ford()
     
-    return -1 # NP-Hard
+    return "?"
 
+# ------------------ FORD-FULKERSON ------------------ #
+
+def undirected_solve(g,red_keys,s,t, is_directed):
+    graph = build_base_graph(g.copy())
+    for red_key in red_keys:
+        graph = parse_util.add_edge_to_graph(graph, red_key, "SINK-PRIME", 2)
+
+def build_base_graph(graph, s,t):
+    for v in graph:
+       for (adjacentV, _) in graph[v].items():
+           graph[v][adjacentV] = 1
+    graph = parse_util.add_edge_to_graph(graph, "SOURCE-PRIME", s, 1)
+    graph = parse_util.add_edge_to_graph(graph, "SOURCE-PRIME", s, 1)
+    return graph
+
+# ------------------ BELLMAN-FORD ------------------ #
 
 def is_DAG():
     """
@@ -31,4 +37,5 @@ def is_DAG():
     raise NotImplementedError("longest path")
 
 def longest_path(g, ):
-    raise NotImplementedError("longest path")
+    raise NotImplementedError("longest patimport parse as parseUtil
+

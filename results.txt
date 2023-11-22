@@ -1,11 +1,2 @@
 Instance name, n, A, F, M, N, S
-bht.txt, 5086, False, 0, 6
-common-1-1000.txt, 586, False, -1, -1
-common-1-1500.txt, 1009, False, -1, -1
-common-1-2000.txt, 1486, False, -1, -1
-common-1-2500.txt, 1966, False, 0, 6
-common-1-3000.txt, 2480, False, 0, 6
-common-1-3500.txt, 2984, False, 0, 6
-common-1-4000.txt, 3477, False, 1, 6
-common-1-4500.txt, 3980, True, 1, 6
-common-1-5000.txt, 4496, True, 0, 6
+common-2-2000.txt, 1984, True, 1, 4, 5

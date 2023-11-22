@@ -18,7 +18,6 @@ def check_many_problem(g, red_keys, s, t):
     
     return -1 # NP-Hard
 
-
 def is_DAG():
     """
     Determines whether the given graph is a Directed Acyclic Graph (DAG).
