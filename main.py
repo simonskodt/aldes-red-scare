@@ -54,9 +54,9 @@ def main(argv):
             print(f"All:\n")
             for file in p.find_all_files():
                 print(f"-- {file} --")
-                graph, red_keys,s,t, is_directed,has_incoming_edges = p.parse_file(file)
-                if len(graph) > 500:
-                    delegate_problem(graph, red_keys,s,t, is_directed, has_incoming_edges, file)
+                graph, red_keys, s, t, is_directed, has_incoming_edges = p.parse_file(file)
+                if len(graph) >= 500:
+                    delegate_problem(graph, red_keys, s, t, is_directed, has_incoming_edges, file)
             break
         else:
             print("Invalid option")
@@ -98,7 +98,7 @@ def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_dire
     print(n_string)
     
     s_start_time = time.time()
-    S = some.check_some_problem(graph, red_keys,s,t, is_directed, has_directed_edges)
+    S = some.check_some_problem(graph, red_keys, s, t, is_directed, has_directed_edges)
     elapsed_time_S = printTimeTaken(s_start_time, "S", instance_name)
     s_string = f"Some: {S} with elapsed time: {elapsed_time_S}\n"
     print(s_string)
