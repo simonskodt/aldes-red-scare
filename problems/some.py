@@ -6,7 +6,7 @@ def check_some_problem(g, red_keys, s, t, is_directed):
     elif is_DAG():
         return bellman_ford()
     
-    return "?"
+    return "?" # NP-Hard
 
 # ------------------ FORD-FULKERSON ------------------ #
 
