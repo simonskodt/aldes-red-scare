@@ -13,7 +13,7 @@ def check_many_problem(g, red_keys, s, t):
             is a DAG, -1 otherwise.
     """
     graph = g.copy()
-    if (is_DAG):
+    if (is_DAG(graph)):
         return longest_path(graph)
     
     return -1 # NP-Hard
