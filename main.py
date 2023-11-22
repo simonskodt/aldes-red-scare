@@ -1,9 +1,8 @@
 import sys
-import time
+import time as t
 import parse as p
 from problems import none, some, many, few, alternate   
 import graph_visualizer as gv
-import time
 
 should_visualize = False
 results_file = None
@@ -68,7 +67,7 @@ def main(argv):
 
 
 def printTimeTaken(start_time, problem, instance_name):
-    end_time = (time.time() - start_time)
+    end_time = (t.time() - start_time)
     if end_time < 1:
         return f"{problem} took: {round(end_time*1000,2)}ms for {instance_name}"
     else:
@@ -78,18 +77,19 @@ def printTimeTaken(start_time, problem, instance_name):
 
 
 def delegate_problem(graph, red_keys, s, t, is_directed, instance_name):
-    a_start_time = time.time()
+    a_start_time = t.time()
     A = alternate.check_alternate_problem(graph, red_keys,s,t)
     elapsed_time_A = printTimeTaken(a_start_time, "A", instance_name)
 
-    f_start_time = time.time()
-    F = few.check_few_problem(graph, red_keys,s,t)
+    f_start_time = t.time()
+    F = few.check_few_problem(graph, red_keys, s, t)
     elapsed_time_F = printTimeTaken(f_start_time, "F", instance_name)
 
     # M = many.check_many_problem(graph, red_keys,s,t)
+    
 
-    n_start_time = time.time()
-    N = none.check_none_problem(graph, red_keys,s,t)
+    n_start_time = t.time()
+    N = none.check_none_problem(graph, red_keys, s, t)
     elapsed_time_N = printTimeTaken(n_start_time, "N", instance_name)
     
     # S = some.check_some_problem(graph, red_keys,s,t)
