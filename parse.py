@@ -22,10 +22,10 @@ def find_all_files():
     sorted_files = sorted(files)
     return sorted_files
 
-def add_edge_to_graph(g, f, t):
+def add_edge_to_graph(g, f, t, w=0):
     if f not in g:
         g[f] = {}
-    g[f][t] = 0
+    g[f][t] = w
     return g
 
 def parse_graph(lines):

@@ -1,5 +1,5 @@
 import sys
-import time as t
+import time
 import parse as p
 from problems import none, some, many, few, alternate   
 import graph_visualizer as gv
@@ -67,7 +67,7 @@ def main(argv):
 
 
 def printTimeTaken(start_time, problem, instance_name):
-    end_time = (t.time() - start_time)
+    end_time = (time.time() - start_time)
     if end_time < 1:
         return f"{problem} took: {round(end_time*1000,2)}ms for {instance_name}"
     else:
@@ -77,30 +77,36 @@ def printTimeTaken(start_time, problem, instance_name):
 
 
 def delegate_problem(graph, red_keys, s, t, is_directed, instance_name):
-    a_start_time = t.time()
+    header_for_print = f"---- Instance: {instance_name}, n: {len(graph)} ----\n"
+    a_start_time = time.time()
     A = alternate.check_alternate_problem(graph, red_keys,s,t)
     elapsed_time_A = printTimeTaken(a_start_time, "A", instance_name)
-
-    f_start_time = t.time()
+    a_string = f"Alternate: {A} with elapsed time: {elapsed_time_A}\n"
+    print(a_string)
+    f_start_time = time.time()
     F = few.check_few_problem(graph, red_keys, s, t)
     elapsed_time_F = printTimeTaken(f_start_time, "F", instance_name)
+    f_string = f"Few: {F} with elapsed time: {elapsed_time_F}\n"
+    print(f_string)
 
     # M = many.check_many_problem(graph, red_keys,s,t)
     
-
-    n_start_time = t.time()
+    n_start_time = time.time()
     N = none.check_none_problem(graph, red_keys, s, t)
     elapsed_time_N = printTimeTaken(n_start_time, "N", instance_name)
+    n_string = f"None: {N} with elapsed time: {elapsed_time_N}\n"
+    print(n_string)
     
-    # S = some.check_some_problem(graph, red_keys,s,t)
+    s_start_time = time.time()
+    #S = some.check_some_problem(graph, red_keys,s,t, is_directed)
+    S = 5
+    elapsed_time_S = printTimeTaken(s_start_time, "S", instance_name)
+    s_string = f"Some: {S} with elapsed time: {elapsed_time_S}\n"
+    print(s_string)
 
     # build strings
-    header_for_print = f"---- Instance: {instance_name}, n: {len(graph)} ----\n"
-    a_string = f"Alternate: {A} with elapsed time: {elapsed_time_A}\n"
-    f_string = f"Few: {F} with elapsed time: {elapsed_time_F}\n"
-    n_string = f"None: {N} with elapsed time: {elapsed_time_N}\n"
-    print_string = header_for_print + a_string + f_string + n_string + "\n"
-    result_string = f"{instance_name}, {len(graph)}, {A}, {F}, {N}\n"
+    print_string = header_for_print + a_string + f_string + n_string + s_string + "\n"
+    result_string = f"{instance_name}, {len(graph)}, {A}, {F}, {N}, {S}\n"
 
     results_file.write(result_string)
     log_file.write(print_string)
