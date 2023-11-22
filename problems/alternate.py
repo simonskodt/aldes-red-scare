@@ -1,8 +1,6 @@
 def check_alternate_problem(graph,red_keys,s,t):
     graph = remove_odd(graph, red_keys, s,t)
-    print("remo")
     path = bfs(graph,s,t)
-    print(path)
     if path is None:
         return False
     else:
