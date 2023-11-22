@@ -61,12 +61,14 @@ def main(argv):
     log_file.close()
 
 def print_instructions():
-    print(f"Provide a flag to run program: python --...")
+    print("\n< ======================= RED SCARE FLAGS ======================= >\n")
+    print(f"Provide a flag to run program: python --... --...\n")
     print("E.g.")
     print("\t--visualize (to visualize the graph)") 
     print("\t--file { file_name } (provide the file name without the path")
     print("\t--files { file_name_1 } { ... } { file_name_n } (multiple files)")
-    print("\t--all (run all implementations on files with n >= 500)")
+    print("\t--all (run all implementations on files with n >= 500)\n")
+    print("< =============================================================== >\n")
     sys.exit(2)
 
 def printTimeTaken(start_time, problem, instance_name):
