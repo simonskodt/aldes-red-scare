@@ -32,7 +32,7 @@ def parse_graph(lines):
     graph = {}
     red_keys = []
     is_directed = False
-    has_incoming_edges = {}
+    has_incoming_edges = set()
 
     # n: number of vertices
     # m: number of edges
@@ -66,8 +66,9 @@ def parse_graph(lines):
             is_directed = True
             from_v = str(directed_search.group("from"))
             to_v = str(directed_search.group("to"))
-            has_incoming_edges[to_v] = True
+            has_incoming_edges:set.add(to_v) 
             graph = add_edge_to_graph(graph, from_v, to_v)
         else:
             print("Unknown edge", edge)
-    return graph, red_keys, s, t, is_directed, has_incoming_edges
+    has_no_incoming_edges = has_incoming_edges.difference(set(graph.keys))
+    return graph, red_keys, s, t, is_directed, has_no_incoming_edges
