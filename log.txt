@@ -1,110 +1,50 @@
----- Instance: G-ex.txt, n: 8 ----
-Alternate: True with elapsed time: 1.7404556274414062e-05
-Few: 0 with elapsed time: 6.0558319091796875e-05
-None: 3 with elapsed time: 1.049041748046875e-05
-
----- Instance: P3.txt, n: 3 ----
-Alternate: True with elapsed time: 7.867813110351562e-06
-Few: 1 with elapsed time: 2.384185791015625e-05
-None: -1 with elapsed time: 3.814697265625e-06
-
 ---- Instance: bht.txt, n: 5086 ----
-Alternate: False with elapsed time: 3.3855438232421875e-05
-Few: 0 with elapsed time: 0.5858988761901855
-None: 6 with elapsed time: 0.1892566680908203
-
----- Instance: common-1-100.txt, n: 12 ----
-Alternate: False with elapsed time: 6.67572021484375e-06
-Few: -1 with elapsed time: 5.745887756347656e-05
-None: -1 with elapsed time: 1.0013580322265625e-05
+Alternate: False with elapsed time: A took: 0.02ms for bht.txt
+Few: 0 with elapsed time: F took: 579.01ms for bht.txt
+None: 6 with elapsed time: N took: 189.1ms for bht.txt
 
 ---- Instance: common-1-1000.txt, n: 586 ----
-Alternate: False with elapsed time: 2.384185791015625e-06
-Few: -1 with elapsed time: 0.00017118453979492188
-None: -1 with elapsed time: 4.124641418457031e-05
+Alternate: False with elapsed time: A took: 0.01ms for common-1-1000.txt
+Few: -1 with elapsed time: F took: 0.19ms for common-1-1000.txt
+None: -1 with elapsed time: N took: 0.04ms for common-1-1000.txt
 
 ---- Instance: common-1-1500.txt, n: 1009 ----
-Alternate: False with elapsed time: 2.86102294921875e-06
-Few: -1 with elapsed time: 0.0002846717834472656
-None: -1 with elapsed time: 4.553794860839844e-05
-
----- Instance: common-1-20.txt, n: 0 ----
-Alternate: False with elapsed time: 2.1457672119140625e-06
-Few: -1 with elapsed time: 1.4543533325195312e-05
-None: -1 with elapsed time: 2.86102294921875e-06
+Alternate: False with elapsed time: A took: 0.0ms for common-1-1500.txt
+Few: -1 with elapsed time: F took: 0.28ms for common-1-1500.txt
+None: -1 with elapsed time: N took: 0.05ms for common-1-1500.txt
 
 ---- Instance: common-1-2000.txt, n: 1486 ----
-Alternate: False with elapsed time: 4.5299530029296875e-06
-Few: -1 with elapsed time: 0.0004088878631591797
-None: -1 with elapsed time: 6.866455078125e-05
-
----- Instance: common-1-250.txt, n: 60 ----
-Alternate: False with elapsed time: 2.1457672119140625e-06
-Few: -1 with elapsed time: 3.4809112548828125e-05
-None: -1 with elapsed time: 1.0013580322265625e-05
+Alternate: False with elapsed time: A took: 0.0ms for common-1-2000.txt
+Few: -1 with elapsed time: F took: 0.41ms for common-1-2000.txt
+None: -1 with elapsed time: N took: 0.08ms for common-1-2000.txt
 
 ---- Instance: common-1-2500.txt, n: 1966 ----
-Alternate: False with elapsed time: 3.0517578125e-05
-Few: 0 with elapsed time: 0.039586782455444336
-None: 6 with elapsed time: 0.0014698505401611328
+Alternate: False with elapsed time: A took: 0.03ms for common-1-2500.txt
+Few: 0 with elapsed time: F took: 38.69ms for common-1-2500.txt
+None: 6 with elapsed time: N took: 1.47ms for common-1-2500.txt
 
 ---- Instance: common-1-3000.txt, n: 2480 ----
-Alternate: False with elapsed time: 5.698204040527344e-05
-Few: 0 with elapsed time: 0.07567715644836426
-None: 6 with elapsed time: 0.003286600112915039
+Alternate: False with elapsed time: A took: 0.06ms for common-1-3000.txt
+Few: 0 with elapsed time: F took: 75.06ms for common-1-3000.txt
+None: 6 with elapsed time: N took: 3.31ms for common-1-3000.txt
 
 ---- Instance: common-1-3500.txt, n: 2984 ----
-Alternate: False with elapsed time: 5.841255187988281e-05
-Few: 0 with elapsed time: 0.1330254077911377
-None: 6 with elapsed time: 0.013365983963012695
+Alternate: False with elapsed time: A took: 0.05ms for common-1-3500.txt
+Few: 0 with elapsed time: F took: 135.76ms for common-1-3500.txt
+None: 6 with elapsed time: N took: 13.46ms for common-1-3500.txt
 
 ---- Instance: common-1-4000.txt, n: 3477 ----
-Alternate: False with elapsed time: 9.083747863769531e-05
-Few: 1 with elapsed time: 0.2205648422241211
-None: 6 with elapsed time: 0.02674555778503418
+Alternate: False with elapsed time: A took: 0.07ms for common-1-4000.txt
+Few: 1 with elapsed time: F took: 222.54ms for common-1-4000.txt
+None: 6 with elapsed time: N took: 27.65ms for common-1-4000.txt
 
 ---- Instance: common-1-4500.txt, n: 3980 ----
-Alternate: True with elapsed time: 9.781892776489258
-Few: 1 with elapsed time: 0.3256399631500244
-None: 6 with elapsed time: 0.05363321304321289
-
----- Instance: common-1-50.txt, n: 2 ----
-Alternate: False with elapsed time: 9.5367431640625e-06
-Few: -1 with elapsed time: 5.125999450683594e-05
-None: -1 with elapsed time: 1.0251998901367188e-05
-
----- Instance: common-1-500.txt, n: 191 ----
-Alternate: False with elapsed time: 3.337860107421875e-06
-Few: -1 with elapsed time: 8.296966552734375e-05
-None: -1 with elapsed time: 1.621246337890625e-05
+Alternate: True with elapsed time: A took: 9.82s for common-1-4500.txt
+Few: 1 with elapsed time: F took: 323.98ms for common-1-4500.txt
+None: 6 with elapsed time: N took: 54.47ms for common-1-4500.txt
 
 ---- Instance: common-1-5000.txt, n: 4496 ----
-Alternate: True with elapsed time: 13.969831943511963
-Few: 0 with elapsed time: 0.46631836891174316
-None: 6 with elapsed time: 0.09380674362182617
-
----- Instance: common-1-5757.txt, n: 5264 ----
-Alternate: True with elapsed time: 40.12020015716553
-Few: 0 with elapsed time: 0.7321584224700928
-None: 6 with elapsed time: 0.206254243850708
-
----- Instance: common-2-100.txt, n: 72 ----
-Alternate: False with elapsed time: 1.5020370483398438e-05
-Few: -1 with elapsed time: 8.678436279296875e-05
-None: -1 with elapsed time: 1.33514404296875e-05
-
----- Instance: common-2-1000.txt, n: 978 ----
-Alternate: True with elapsed time: 5.344554662704468
-Few: 1 with elapsed time: 0.0433957576751709
-None: 4 with elapsed time: 0.0020377635955810547
-
----- Instance: common-2-1500.txt, n: 1481 ----
-Alternate: True with elapsed time: 97.41575813293457
-Few: 1 with elapsed time: 0.1478748321533203
-None: 4 with elapsed time: 0.06288313865661621
-
----- Instance: common-2-20.txt, n: 6 ----
-Alternate: False with elapsed time: 8.58306884765625e-06
-Few: -1 with elapsed time: 4.601478576660156e-05
-None: -1 with elapsed time: 7.3909759521484375e-06
+Alternate: True with elapsed time: A took: 14.01s for common-1-5000.txt
+Few: 0 with elapsed time: F took: 460.2ms for common-1-5000.txt
+None: 6 with elapsed time: N took: 93.5ms for common-1-5000.txt
 
