@@ -115,7 +115,7 @@ def augment_graph(g, red_keys, s, t):
             
     return graph
 
-def is_DAG(g, has_no_incoming_edge):
+def is_DAG(g, has_no_incoming_edges):
     """
     Determines whether the given graph is a Directed Acyclic Graph (DAG).
     Inspired by psudo-implementation, found at this url:
@@ -126,25 +126,25 @@ def is_DAG(g, has_no_incoming_edge):
     """
     graph = g.copy()
     topological_order = []
-    vertices_with_no_incoming_edge = has_no_incoming_edge.copy()
+    vertices_with_no_incoming_edge = has_no_incoming_edges.copy()
     while vertices_with_no_incoming_edge:
         vertex = vertices_with_no_incoming_edge.pop()
         topological_order.append(vertex)
         for key in graph[vertex]:
             graph[vertex][key] = None
-            if not has_incoming_edge(key, graph):
+            if has_no_incoming_edge(key, graph):
                 vertices_with_no_incoming_edge.add(key)
+        del graph[vertex]
     if len(graph) > 0:
         return False
     else:
         return True
 
-
-def has_incoming_edge(vertex, graph):
+def has_no_incoming_edge(vertex, graph):
     for key in graph:
         if graph[key][vertex]:
-            return True
-    return False
+            return False
+    return True
 
 def bellman_ford(graph):
     return 0
