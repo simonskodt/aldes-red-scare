@@ -46,6 +46,7 @@ def parse_graph(lines):
         vertex = lines[i+2]
         (regFrom, regTo) = re.search("[_a-z0-9]+", vertex).span()
         name = vertex[regFrom:regTo]
+        graph[name] = {}
         # if vertex is red, insert in red keys
         if "*" in vertex:
             red_keys.append(name)
