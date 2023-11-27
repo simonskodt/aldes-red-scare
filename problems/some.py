@@ -5,7 +5,13 @@ def check_some_problem(g, red_keys, s, t, is_directed, has_no_incoming_edges):
         return undirected_solve(g, red_keys, s, t, is_directed)
     elif is_DAG(g, has_no_incoming_edges):
         graph = augment_graph(g, red_keys, s, t)
-        # return bellman_ford(graph)
+        _, pre_nodes = bellman_ford(graph, s)
+        
+        curr = t
+        while curr != None and curr != s:
+            curr = pre_nodes[curr]
+
+        return curr is not None
     
     return "?" # NP-Hard
 
@@ -158,6 +164,35 @@ def has_no_incoming_edge(vertex, graph):
             return False
     return True
 
-def bellman_ford(graph):
-    return 0
+def bellman_ford(g, source):
+    """
+    Runs Bellman-Ford to find some path from s to t.
+    Implementation found at this url:
+    https://gist.github.com/ngenator/6178728
 
+    Returns:
+        bool: True if there exists at least one path from s to t, 
+              False otherwise.
+    """
+    graph = g.copy()
+
+    # Step 1: Prepare the distance and predecessor for each node
+    distance, predecessor = dict(), dict()
+    for node in graph:
+        distance[node], predecessor[node] = float('inf'), None
+    distance[source] = 0
+
+    # Step 2: Relax the edges
+    for _ in range(len(graph) - 1):
+        for node in graph:
+            for adj in graph[node]:
+                # If the distance between the node and the neighbour is lower than the current, store it
+                if distance[adj] > distance[node] + graph[node][adj]:
+                    distance[adj], predecessor[adj] = distance[node] + graph[node][adj], node
+
+    # Step 3: Check for negative weight cycles
+    for node in graph:
+        for adj in graph[node]:
+            assert distance[adj] <= distance[node] + graph[node][adj], "Negative weight cycle."
+ 
+    return distance, predecessor
