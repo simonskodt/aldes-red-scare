@@ -36,14 +36,14 @@ def main(argv):
             print(f"File: {file}")
 
             graph, red_keys,s,t, is_directed, has_no_incoming_edges = p.parse_file(file)
-            delegate_problem(graph, red_keys,s,t, is_directed, has_no_incoming_edges, file)
+            delegate_problem(graph, red_keys,s,t, is_directed,file, has_no_incoming_edges)
             break
         elif arg == '--files':
             files = argv[i+1].split(",")
             print(f"File: {files}")
             for file in files:
                 graph, red_keys,s,t, is_directed, has_no_incoming_edges = p.parse_file(file)
-                delegate_problem(graph, red_keys,s,t, is_directed, has_no_incoming_edges, file)
+                delegate_problem(graph, red_keys,s,t, is_directed,file, has_no_incoming_edges)
             break
         elif arg == '--all':
             print(f"All:\n")
@@ -51,7 +51,7 @@ def main(argv):
                 print(f"-- {file} --")
                 graph, red_keys, s, t, is_directed, has_no_incoming_edges = p.parse_file(file)
                 if len(graph) >= 500:
-                    delegate_problem(graph, red_keys, s, t, is_directed, has_no_incoming_edges, file)
+                    delegate_problem(graph, red_keys, s, t, is_directed,file, has_no_incoming_edges)
             break
         else:
             print("Invalid option")

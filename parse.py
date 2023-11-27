@@ -70,5 +70,5 @@ def parse_graph(lines):
             graph = add_edge_to_graph(graph, from_v, to_v)
         else:
             print("Unknown edge", edge)
-    has_no_incoming_edges = has_incoming_edges.difference(set(graph.keys))
+    has_no_incoming_edges = has_incoming_edges.difference(set(graph.keys()))
     return graph, red_keys, s, t, is_directed, has_no_incoming_edges
