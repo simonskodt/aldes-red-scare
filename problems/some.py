@@ -15,7 +15,7 @@ SOURCE = "SOURCE-PRIME"
 SINK = "SINK-PRIME"
 
 def undirected_solve(g,red_keys,s,t, is_directed):
-    graph = build_base_graph(g.copy(), s,t)
+    graph = build_base_graph(g, s,t)
     for red_key in red_keys:
         graph = parse_util.add_edge_to_graph(graph.copy(), red_key, SINK, 2)
         graph = parse_util.add_edge_to_graph(graph.copy(), SINK, red_key, 0)
@@ -32,14 +32,25 @@ def undirected_solve(g,red_keys,s,t, is_directed):
     return False
 
 def build_base_graph(graph, s,t):
+    new_graph = graph.copy()
     for v in graph:
-       for (adjacentV, _) in graph[v].items():
-           graph[v][adjacentV] = 1
-    graph = parse_util.add_edge_to_graph(graph, SOURCE, s, 1)
-    graph = parse_util.add_edge_to_graph(graph, SOURCE, t, 1)
-    graph = parse_util.add_edge_to_graph(graph, s, SOURCE, 0)
-    graph = parse_util.add_edge_to_graph(graph, t, SOURCE, 0)
-    return graph
+       items = graph[v].items()
+       for (adjacentV, _) in items:
+           new_graph[v][adjacentV] = 1
+       if len(items) > 1:
+           #Ensure that it only comes to a vertex once
+           temp_node = "tmp-" + v
+           new_graph[temp_node] = graph[v].copy()
+           new_graph[temp_node][v] = 1
+           new_graph[v] = {temp_node: 1}
+           for (adjacentV, _) in items:
+               del new_graph[adjacentV][v]
+               new_graph[adjacentV][temp_node] = 1
+    new_graph = parse_util.add_edge_to_graph(new_graph, SOURCE, s, 1)
+    new_graph = parse_util.add_edge_to_graph(new_graph, SOURCE, t, 1)
+    new_graph = parse_util.add_edge_to_graph(new_graph, s, SOURCE, 0)
+    new_graph = parse_util.add_edge_to_graph(new_graph, t, SOURCE, 0)
+    return new_graph
 
 
 #Taken from previous assignment https://github.com/simonskodt/aldes-flow-behind-enemy-lines/blob/main/flow.py
@@ -94,6 +105,7 @@ def augment(path, flow, graph):
     """
     for i in range(len(path)-1):
         n1, n2 = path[i], path[i+1]
+        print(graph[n2], n1,n2)
         forward_edge_new_cap  = graph[n1][n2] - flow
         backward_edge_new_cap = graph[n2][n1] + flow
         graph = parse_util.add_edge_to_graph(graph, n1, n2, forward_edge_new_cap)
