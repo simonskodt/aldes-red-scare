@@ -1,9 +1,12 @@
 import parse as parse_util
+import copy
 
 def check_some_problem(g, red_keys, s, t, is_directed, has_no_incoming_edges):
+    dag = is_DAG(g, has_no_incoming_edges)
     if not is_directed:
         return undirected_solve(g, red_keys, s, t, is_directed)
-    elif is_DAG(g, has_no_incoming_edges):
+    elif dag:
+        print(g)
         graph = augment_graph(g, red_keys, s, t)
         _, pre_nodes = bellman_ford(graph, s)
         
@@ -12,7 +15,6 @@ def check_some_problem(g, red_keys, s, t, is_directed, has_no_incoming_edges):
             curr = pre_nodes[curr]
 
         return curr is not None
-    
     return "?" # NP-Hard
 
 # ------------------ FORD-FULKERSON ------------------ #
@@ -21,7 +23,7 @@ SOURCE = "SOURCE-PRIME"
 SINK = "SINK-PRIME"
 
 def undirected_solve(g,red_keys,s,t, is_directed):
-    graph = build_base_graph(g, s,t)
+    graph = build_base_graph(g, s,t, red_keys, is_directed)
     for red_key in red_keys:
         graph = parse_util.add_edge_to_graph(graph.copy(), red_key, SINK, 2)
         graph = parse_util.add_edge_to_graph(graph.copy(), SINK, red_key, 0)
@@ -32,12 +34,11 @@ def undirected_solve(g,red_keys,s,t, is_directed):
             total_flow += flow
             augment(path, flow, graph)
             path, flow = bfs(graph)
-
         if(total_flow == 2):
             return True
     return False
 
-def build_base_graph(graph, s,t):
+def build_base_graph(graph, s,t, red_keys, is_directed):
     new_graph = graph.copy()
     for v in graph:
        items = graph[v].items()
@@ -50,8 +51,7 @@ def build_base_graph(graph, s,t):
            new_graph[temp_node][v] = 1
            new_graph[v] = {temp_node: 1}
            for (adjacentV, _) in items:
-               del new_graph[adjacentV][v]
-               new_graph[adjacentV][temp_node] = 1
+               new_graph[adjacentV][temp_node] = 0
     new_graph = parse_util.add_edge_to_graph(new_graph, SOURCE, s, 1)
     new_graph = parse_util.add_edge_to_graph(new_graph, SOURCE, t, 1)
     new_graph = parse_util.add_edge_to_graph(new_graph, s, SOURCE, 0)
@@ -97,6 +97,11 @@ def bfs(graph):
     
     return ([], 0)
 
+def get_weight(graph, n1,n2):
+    if n1 in graph.keys():
+        if n2 in graph[n1].keys():
+            return graph[n1][n2]
+    return 0
 def augment(path, flow, graph):
     """
     Augments the flow along a given path in a graph.
@@ -111,9 +116,8 @@ def augment(path, flow, graph):
     """
     for i in range(len(path)-1):
         n1, n2 = path[i], path[i+1]
-        print(graph[n2], n1,n2)
-        forward_edge_new_cap  = graph[n1][n2] - flow
-        backward_edge_new_cap = graph[n2][n1] + flow
+        forward_edge_new_cap  = get_weight(graph,n1,n2) - flow
+        backward_edge_new_cap = get_weight(graph,n2,n1) + flow
         graph = parse_util.add_edge_to_graph(graph, n1, n2, forward_edge_new_cap)
         graph = parse_util.add_edge_to_graph(graph, n2, n1, backward_edge_new_cap)
 
@@ -142,25 +146,23 @@ def is_DAG(g, has_no_incoming_edges):
     Returns:
         bool: True if the graph is a DAG, False otherwise.
     """
-    graph = g.copy()
+    graph = copy.deepcopy(g)
     topological_order = []
     vertices_with_no_incoming_edge = has_no_incoming_edges.copy()
     while vertices_with_no_incoming_edge:
-        vertex = vertices_with_no_incoming_edge.pop()
-        topological_order.append(vertex)
-        for key in graph[vertex]:
-            graph[vertex][key] = None
-            if has_no_incoming_edge(key, graph):
-                vertices_with_no_incoming_edge.add(key)
-        del graph[vertex]
-    if len(graph) > 0:
-        return False
-    else:
-        return True
+        n = vertices_with_no_incoming_edge.pop()
+        topological_order.append(n)
+        if n in graph.keys():
+            for m in copy.copy(graph[n]):
+                del graph[n][m]
+                if check_has_no_incoming_edge(m, graph):
+                    vertices_with_no_incoming_edge.append(m)
+            del graph[n]
+    return len(graph) <= 0
 
-def has_no_incoming_edge(vertex, graph):
+def check_has_no_incoming_edge(vertex, graph):
     for key in graph:
-        if graph[key][vertex]:
+        if vertex in graph[key].keys() and graph[key][vertex] is not None:
             return False
     return True
 

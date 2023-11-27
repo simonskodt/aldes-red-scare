@@ -50,8 +50,9 @@ def main(argv):
             for file in p.find_all_files():
                 print(f"-- {file} --")
                 graph, red_keys, s, t, is_directed, has_no_incoming_edges = p.parse_file(file)
-                if len(graph) >= 500:
-                    delegate_problem(graph, red_keys, s, t, is_directed,file, has_no_incoming_edges)
+                #if len(graph) >= 500:
+                #    delegate_problem(graph, red_keys, s, t, is_directed,file, has_no_incoming_edges)
+                print(some.is_DAG(graph,has_no_incoming_edges))
             break
         else:
             print("Invalid option")
