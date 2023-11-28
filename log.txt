@@ -1,6 +1,6 @@
----- Instance: common-2-2000.txt, n: 1984 ----
-Alternate: True with elapsed time: A took: 524.34ms for common-2-2000.txt
-Few: 1 with elapsed time: F took: 433.01ms for common-2-2000.txt
-None: 4 with elapsed time: N took: 221.57ms for common-2-2000.txt
-Some: 5 with elapsed time: S took: 0.0ms for common-2-2000.txt
+---- Instance: rusty-1-17, n: 17 ----
+Alternate: False with elapsed time: A took: 0.0ms for rusty-1-17
+Few: 0 with elapsed time: F took: 0.1ms for rusty-1-17
+None: 10 with elapsed time: N took: 0.02ms for rusty-1-17
+Some: True with elapsed time: S took: 0.45ms for rusty-1-17
 

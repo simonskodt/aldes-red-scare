@@ -1,2 +1,2 @@
 Instance name, n, A, F, M, N, S
-common-2-2000.txt, 1984, True, 1, 4, 5
+rusty-1-17, 17, False, 0, 10, True

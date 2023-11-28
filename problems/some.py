@@ -6,7 +6,6 @@ def check_some_problem(g, red_keys, s, t, is_directed, has_no_incoming_edges):
     if not is_directed:
         return undirected_solve(g, red_keys, s, t, is_directed)
     elif dag:
-        print(g)
         graph = augment_graph(g, red_keys, s, t)
         _, pre_nodes = bellman_ford(graph, s)
         
@@ -27,16 +26,13 @@ def undirected_solve(g,red_keys,s,t, is_directed):
     for red_key in red_keys:
         cur_graph = parse_util.add_edge_to_graph(copy.deepcopy(graph), red_key, SINK, 2)
         cur_graph = parse_util.add_edge_to_graph(cur_graph, SINK, red_key, 0)
-        print(cur_graph)
         total_flow = 0
         path, flow = bfs(cur_graph)
         
         while path:
             total_flow += flow
             augment(path, flow, cur_graph)
-            print(path, flow)
             path, flow = bfs(cur_graph)
-        print(path, total_flow)
         if(total_flow == 2):
             return True
     return False
@@ -93,7 +89,6 @@ def bfs(graph):
                 if adj_node == SINK:
                     return path + [SINK], flow
             elif capacity == 0 and adj_node not in visited:
-                print(graph[adj_node], node)
                 original_capacity = get_weight(graph, adj_node, node)
                 endpoints.append((node, adj_node, original_capacity//2))
     
