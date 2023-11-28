@@ -25,21 +25,24 @@ SINK = "SINK-PRIME"
 def undirected_solve(g,red_keys,s,t, is_directed):
     graph = build_base_graph(g, s,t, red_keys, is_directed)
     for red_key in red_keys:
-        graph = parse_util.add_edge_to_graph(graph.copy(), red_key, SINK, 2)
-        graph = parse_util.add_edge_to_graph(graph.copy(), SINK, red_key, 0)
+        cur_graph = parse_util.add_edge_to_graph(copy.deepcopy(graph), red_key, SINK, 2)
+        cur_graph = parse_util.add_edge_to_graph(cur_graph, SINK, red_key, 0)
+        print(cur_graph)
         total_flow = 0
-        path, flow = bfs(graph)
+        path, flow = bfs(cur_graph)
         
         while path:
             total_flow += flow
-            augment(path, flow, graph)
-            path, flow = bfs(graph)
+            augment(path, flow, cur_graph)
+            print(path, flow)
+            path, flow = bfs(cur_graph)
+        print(path, total_flow)
         if(total_flow == 2):
             return True
     return False
 
 def build_base_graph(graph, s,t, red_keys, is_directed):
-    new_graph = graph.copy()
+    new_graph = copy.deepcopy(graph)
     for v in graph:
        items = graph[v].items()
        for (adjacentV, _) in items:
@@ -47,11 +50,9 @@ def build_base_graph(graph, s,t, red_keys, is_directed):
        if len(items) > 1:
            #Ensure that it only comes to a vertex once
            temp_node = "tmp-" + v
-           new_graph[temp_node] = graph[v].copy()
-           new_graph[temp_node][v] = 1
+           new_graph[temp_node] =  copy.deepcopy(new_graph[v])
+           new_graph[temp_node][v] = 0
            new_graph[v] = {temp_node: 1}
-           for (adjacentV, _) in items:
-               new_graph[adjacentV][temp_node] = 0
     new_graph = parse_util.add_edge_to_graph(new_graph, SOURCE, s, 1)
     new_graph = parse_util.add_edge_to_graph(new_graph, SOURCE, t, 1)
     new_graph = parse_util.add_edge_to_graph(new_graph, s, SOURCE, 0)
@@ -92,7 +93,8 @@ def bfs(graph):
                 if adj_node == SINK:
                     return path + [SINK], flow
             elif capacity == 0 and adj_node not in visited:
-                original_capacity = graph[adj_node][node]
+                print(graph[adj_node], node)
+                original_capacity = get_weight(graph, adj_node, node)
                 endpoints.append((node, adj_node, original_capacity//2))
     
     return ([], 0)
