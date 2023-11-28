@@ -83,6 +83,10 @@ def printTimeTaken(start_time, problem, instance_name):
 
 def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_no_directed_edges):
     header_for_print = f"---- Instance: {instance_name}, n: {len(graph)} ----\n"
+    if alternate.bfs(graph, s, t) is None:
+        print_no_path(instance_name, s, t)
+        return
+    
     a_start_time = time.time()
     A = alternate.check_alternate_problem(graph, red_keys,s,t)
     elapsed_time_A = printTimeTaken(a_start_time, "A", instance_name)
@@ -121,6 +125,14 @@ def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_no_d
 
 def visualize(graph, red_keys, s, t, is_directed):
     gv.visualize(graph, red_keys, s, t, is_directed)
+
+def print_no_path(instance_name, s, t):
+    no_path = f"No path from '{s}' to '{t}'"
+    result_string = f"{instance_name}: {no_path}\n"
+    results_file.write(result_string)
+    print_string = f"---- Instance: {instance_name}, {no_path}\n"
+    log_file.write(print_string)
+    print(print_string)
 
 if __name__ == "__main__":
     sys.path.insert(1, 'problems/')
