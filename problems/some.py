@@ -7,13 +7,8 @@ def check_some_problem(g, red_keys, s, t, is_directed, has_no_incoming_edges):
         return undirected_solve(g, red_keys, s, t, is_directed)
     elif dag:
         graph = augment_graph(g, red_keys, s, t)
-        distances, pre_nodes = bellman_ford(graph, s)
-
-        dist = 0
-        curr = t
-        while curr != None and curr != s:
-            dist += distances[curr]
-            curr = pre_nodes[curr]
+        distances, _ = bellman_ford(graph, s)
+        dist = distances[t]
         return dist < 0
     return "?" # NP-Hard
 
@@ -173,8 +168,8 @@ def bellman_ford(g, source):
     https://gist.github.com/ngenator/6178728
 
     Returns:
-        bool: True if there exists at least one path from s to t, 
-              False otherwise.
+        distance: Dictionary with the distance to given vertex from s
+        path: a Dictionary containing the path for backtracking, key: vertex, value: previous vertex  
     """
     graph = g.copy()
 
