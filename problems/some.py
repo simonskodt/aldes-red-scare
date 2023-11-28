@@ -6,15 +6,15 @@ def check_some_problem(g, red_keys, s, t, is_directed, has_no_incoming_edges):
     if not is_directed:
         return undirected_solve(g, red_keys, s, t, is_directed)
     elif dag:
-        print(g)
         graph = augment_graph(g, red_keys, s, t)
-        _, pre_nodes = bellman_ford(graph, s)
-        
+        distances, pre_nodes = bellman_ford(graph, s)
+
+        dist = 0
         curr = t
         while curr != None and curr != s:
+            dist += distances[curr]
             curr = pre_nodes[curr]
-
-        return curr is not None
+        return dist < 0
     return "?" # NP-Hard
 
 # ------------------ FORD-FULKERSON ------------------ #

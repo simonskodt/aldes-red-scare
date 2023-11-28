@@ -1,0 +1,17 @@
+5 10 0
+a e
+a
+b
+c
+d
+e
+a -> b
+a -> c
+a -> d
+a -> e
+b -> c
+b -> d
+c -> d
+d -> b
+d -> e
+e -> b
