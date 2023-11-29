@@ -1,6 +1,533 @@
----- Instance: rusty-1-17, n: 17 ----
-Alternate: False with elapsed time: A took: 0.0ms for rusty-1-17
-Few: 0 with elapsed time: F took: 0.1ms for rusty-1-17
-None: 10 with elapsed time: N took: 0.02ms for rusty-1-17
-Some: True with elapsed time: S took: 0.45ms for rusty-1-17
+---- Instance: bht.txt, n: 5757 ----
+Alternate: False with elapsed time: A took: 0.01ms for bht.txt
+Few: 0 with elapsed time: F took: 356.78ms for bht.txt
+Many: ? with elapsed time: M took: 0.03ms for bht.txt
+None: 6 with elapsed time: N took: 122.18ms for bht.txt
+Some: True with elapsed time: S took: 2.32s for bht.txt
+
+---- Instance: common-1-1000.txt, No path from 'start' to 'ender'
+---- Instance: common-1-1500.txt, No path from 'start' to 'ender'
+---- Instance: common-1-2000.txt, No path from 'start' to 'ender'
+---- Instance: common-1-2500.txt, n: 2500 ----
+Alternate: False with elapsed time: A took: 0.02ms for common-1-2500.txt
+Few: 0 with elapsed time: F took: 29.34ms for common-1-2500.txt
+Many: ? with elapsed time: M took: 0.02ms for common-1-2500.txt
+None: 6 with elapsed time: N took: 1.08ms for common-1-2500.txt
+Some: True with elapsed time: S took: 179.42ms for common-1-2500.txt
+
+---- Instance: common-1-3000.txt, n: 3000 ----
+Alternate: False with elapsed time: A took: 0.03ms for common-1-3000.txt
+Few: 0 with elapsed time: F took: 50.86ms for common-1-3000.txt
+Many: ? with elapsed time: M took: 0.01ms for common-1-3000.txt
+None: 6 with elapsed time: N took: 2.2ms for common-1-3000.txt
+Some: True with elapsed time: S took: 283.33ms for common-1-3000.txt
+
+---- Instance: common-1-3500.txt, n: 3500 ----
+Alternate: False with elapsed time: A took: 0.05ms for common-1-3500.txt
+Few: 0 with elapsed time: F took: 88.44ms for common-1-3500.txt
+Many: ? with elapsed time: M took: 0.02ms for common-1-3500.txt
+None: 6 with elapsed time: N took: 9.3ms for common-1-3500.txt
+Some: True with elapsed time: S took: 1.09s for common-1-3500.txt
+
+---- Instance: common-1-4000.txt, n: 4000 ----
+Alternate: False with elapsed time: A took: 0.06ms for common-1-4000.txt
+Few: 1 with elapsed time: F took: 138.71ms for common-1-4000.txt
+Many: ? with elapsed time: M took: 0.02ms for common-1-4000.txt
+None: 6 with elapsed time: N took: 19.27ms for common-1-4000.txt
+Some: True with elapsed time: S took: 1.59s for common-1-4000.txt
+
+---- Instance: common-1-4500.txt, n: 4500 ----
+Alternate: True with elapsed time: A took: 220.02ms for common-1-4500.txt
+Few: 1 with elapsed time: F took: 208.18ms for common-1-4500.txt
+Many: ? with elapsed time: M took: 0.02ms for common-1-4500.txt
+None: 6 with elapsed time: N took: 36.42ms for common-1-4500.txt
+Some: True with elapsed time: S took: 2.18s for common-1-4500.txt
+
+---- Instance: common-1-500.txt, No path from 'start' to 'ender'
+---- Instance: common-1-5000.txt, n: 5000 ----
+Alternate: True with elapsed time: A took: 309.28ms for common-1-5000.txt
+Few: 0 with elapsed time: F took: 280.25ms for common-1-5000.txt
+Many: ? with elapsed time: M took: 0.02ms for common-1-5000.txt
+None: 6 with elapsed time: N took: 61.84ms for common-1-5000.txt
+Some: True with elapsed time: S took: 2.93s for common-1-5000.txt
+
+---- Instance: common-1-5757.txt, n: 5757 ----
+Alternate: True with elapsed time: A took: 491.47ms for common-1-5757.txt
+Few: 0 with elapsed time: F took: 446.01ms for common-1-5757.txt
+Many: ? with elapsed time: M took: 0.02ms for common-1-5757.txt
+None: 6 with elapsed time: N took: 131.32ms for common-1-5757.txt
+Some: True with elapsed time: S took: 3.39s for common-1-5757.txt
+
+---- Instance: common-2-1000.txt, n: 1000 ----
+Alternate: True with elapsed time: A took: 36.42ms for common-2-1000.txt
+Few: 1 with elapsed time: F took: 29.42ms for common-2-1000.txt
+Many: ? with elapsed time: M took: 0.01ms for common-2-1000.txt
+None: 4 with elapsed time: N took: 1.38ms for common-2-1000.txt
+Some: True with elapsed time: S took: 232.0ms for common-2-1000.txt
+
+---- Instance: common-2-1500.txt, n: 1500 ----
+Alternate: True with elapsed time: A took: 121.52ms for common-2-1500.txt
+Few: 1 with elapsed time: F took: 103.18ms for common-2-1500.txt
+Many: ? with elapsed time: M took: 0.01ms for common-2-1500.txt
+None: 4 with elapsed time: N took: 45.23ms for common-2-1500.txt
+Some: True with elapsed time: S took: 227.13ms for common-2-1500.txt
+
+---- Instance: common-2-2000.txt, n: 2000 ----
+Alternate: True with elapsed time: A took: 291.55ms for common-2-2000.txt
+Few: 1 with elapsed time: F took: 234.24ms for common-2-2000.txt
+Many: ? with elapsed time: M took: 0.01ms for common-2-2000.txt
+None: 4 with elapsed time: N took: 119.3ms for common-2-2000.txt
+Some: True with elapsed time: S took: 272.3ms for common-2-2000.txt
+
+---- Instance: common-2-2500.txt, n: 2500 ----
+Alternate: True with elapsed time: A took: 544.16ms for common-2-2500.txt
+Few: 1 with elapsed time: F took: 467.8ms for common-2-2500.txt
+Many: ? with elapsed time: M took: 0.01ms for common-2-2500.txt
+None: 4 with elapsed time: N took: 142.61ms for common-2-2500.txt
+Some: True with elapsed time: S took: 473.44ms for common-2-2500.txt
+
+---- Instance: common-2-3000.txt, n: 3000 ----
+Alternate: True with elapsed time: A took: 967.79ms for common-2-3000.txt
+Few: 1 with elapsed time: F took: 792.65ms for common-2-3000.txt
+Many: ? with elapsed time: M took: 0.01ms for common-2-3000.txt
+None: 4 with elapsed time: N took: 271.42ms for common-2-3000.txt
+Some: True with elapsed time: S took: 687.83ms for common-2-3000.txt
+
+---- Instance: common-2-3500.txt, n: 3500 ----
+Alternate: True with elapsed time: A took: 1.59s for common-2-3500.txt
+Few: 1 with elapsed time: F took: 1.27s for common-2-3500.txt
+Many: ? with elapsed time: M took: 0.02ms for common-2-3500.txt
+None: 4 with elapsed time: N took: 563.83ms for common-2-3500.txt
+Some: True with elapsed time: S took: 6.01s for common-2-3500.txt
+
+---- Instance: common-2-4000.txt, n: 4000 ----
+Alternate: True with elapsed time: A took: 2.41s for common-2-4000.txt
+Few: 1 with elapsed time: F took: 1.93s for common-2-4000.txt
+Many: ? with elapsed time: M took: 0.02ms for common-2-4000.txt
+None: 4 with elapsed time: N took: 864.86ms for common-2-4000.txt
+Some: True with elapsed time: S took: 8.84s for common-2-4000.txt
+
+---- Instance: common-2-4500.txt, n: 4500 ----
+Alternate: True with elapsed time: A took: 3.51s for common-2-4500.txt
+Few: 1 with elapsed time: F took: 2.73s for common-2-4500.txt
+Many: ? with elapsed time: M took: 0.02ms for common-2-4500.txt
+None: 4 with elapsed time: N took: 1.31s for common-2-4500.txt
+Some: True with elapsed time: S took: 12.56s for common-2-4500.txt
+
+---- Instance: common-2-500.txt, n: 500 ----
+Alternate: True with elapsed time: A took: 3.95ms for common-2-500.txt
+Few: 1 with elapsed time: F took: 3.7ms for common-2-500.txt
+Many: ? with elapsed time: M took: 0.0ms for common-2-500.txt
+None: 4 with elapsed time: N took: 0.04ms for common-2-500.txt
+Some: True with elapsed time: S took: 26.95ms for common-2-500.txt
+
+---- Instance: common-2-5000.txt, n: 5000 ----
+Alternate: True with elapsed time: A took: 4.74s for common-2-5000.txt
+Few: 1 with elapsed time: F took: 3.75s for common-2-5000.txt
+Many: ? with elapsed time: M took: 0.03ms for common-2-5000.txt
+None: 4 with elapsed time: N took: 1.9s for common-2-5000.txt
+Some: True with elapsed time: S took: 17.21s for common-2-5000.txt
+
+---- Instance: common-2-5757.txt, n: 5757 ----
+Alternate: True with elapsed time: A took: 6.99s for common-2-5757.txt
+Few: 1 with elapsed time: F took: 5.79s for common-2-5757.txt
+Many: ? with elapsed time: M took: 0.03ms for common-2-5757.txt
+None: 4 with elapsed time: N took: 2.85s for common-2-5757.txt
+Some: True with elapsed time: S took: 25.24s for common-2-5757.txt
+
+---- Instance: gnm-1000-1500-0.txt, n: 1000 ----
+Alternate: False with elapsed time: A took: 0.01ms for gnm-1000-1500-0.txt
+Few: 1 with elapsed time: F took: 12.17ms for gnm-1000-1500-0.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-1000-1500-0.txt
+None: -1 with elapsed time: N took: 8.96ms for gnm-1000-1500-0.txt
+Some: True with elapsed time: S took: 66.7ms for gnm-1000-1500-0.txt
+
+---- Instance: gnm-1000-1500-1.txt, n: 1000 ----
+Alternate: False with elapsed time: A took: 6.41ms for gnm-1000-1500-1.txt
+Few: 2 with elapsed time: F took: 12.11ms for gnm-1000-1500-1.txt
+Many: ? with elapsed time: M took: 0.0ms for gnm-1000-1500-1.txt
+None: -1 with elapsed time: N took: 2.35ms for gnm-1000-1500-1.txt
+Some: True with elapsed time: S took: 64.87ms for gnm-1000-1500-1.txt
+
+---- Instance: gnm-1000-2000-0.txt, n: 1000 ----
+Alternate: False with elapsed time: A took: 0.01ms for gnm-1000-2000-0.txt
+Few: 0 with elapsed time: F took: 16.68ms for gnm-1000-2000-0.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-1000-2000-0.txt
+None: 7 with elapsed time: N took: 8.48ms for gnm-1000-2000-0.txt
+Some: True with elapsed time: S took: 156.19ms for gnm-1000-2000-0.txt
+
+---- Instance: gnm-1000-2000-1.txt, n: 1000 ----
+Alternate: False with elapsed time: A took: 0.03ms for gnm-1000-2000-1.txt
+Few: 2 with elapsed time: F took: 16.73ms for gnm-1000-2000-1.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-1000-2000-1.txt
+None: -1 with elapsed time: N took: 0.04ms for gnm-1000-2000-1.txt
+Some: True with elapsed time: S took: 85.03ms for gnm-1000-2000-1.txt
+
+---- Instance: gnm-2000-3000-0.txt, n: 2000 ----
+Alternate: False with elapsed time: A took: 0.01ms for gnm-2000-3000-0.txt
+Few: 0 with elapsed time: F took: 42.62ms for gnm-2000-3000-0.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-2000-3000-0.txt
+None: 8 with elapsed time: N took: 12.87ms for gnm-2000-3000-0.txt
+Some: True with elapsed time: S took: 153.99ms for gnm-2000-3000-0.txt
+
+---- Instance: gnm-2000-3000-1.txt, n: 2000 ----
+Alternate: True with elapsed time: A took: 26.76ms for gnm-2000-3000-1.txt
+Few: 2 with elapsed time: F took: 41.74ms for gnm-2000-3000-1.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-2000-3000-1.txt
+None: -1 with elapsed time: N took: 0.08ms for gnm-2000-3000-1.txt
+Some: True with elapsed time: S took: 200.23ms for gnm-2000-3000-1.txt
+
+---- Instance: gnm-2000-4000-0.txt, n: 2000 ----
+Alternate: False with elapsed time: A took: 0.01ms for gnm-2000-4000-0.txt
+Few: 0 with elapsed time: F took: 59.55ms for gnm-2000-4000-0.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-2000-4000-0.txt
+None: 6 with elapsed time: N took: 32.95ms for gnm-2000-4000-0.txt
+Some: True with elapsed time: S took: 322.42ms for gnm-2000-4000-0.txt
+
+---- Instance: gnm-2000-4000-1.txt, n: 2000 ----
+Alternate: False with elapsed time: A took: 0.04ms for gnm-2000-4000-1.txt
+Few: 1 with elapsed time: F took: 57.87ms for gnm-2000-4000-1.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-2000-4000-1.txt
+None: 5 with elapsed time: N took: 0.85ms for gnm-2000-4000-1.txt
+Some: True with elapsed time: S took: 179.19ms for gnm-2000-4000-1.txt
+
+---- Instance: gnm-3000-4500-0.txt, n: 3000 ----
+Alternate: False with elapsed time: A took: 0.01ms for gnm-3000-4500-0.txt
+Few: 0 with elapsed time: F took: 89.92ms for gnm-3000-4500-0.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-3000-4500-0.txt
+None: 10 with elapsed time: N took: 60.69ms for gnm-3000-4500-0.txt
+Some: True with elapsed time: S took: 371.33ms for gnm-3000-4500-0.txt
+
+---- Instance: gnm-3000-4500-1.txt, n: 3000 ----
+Alternate: False with elapsed time: A took: 0.04ms for gnm-3000-4500-1.txt
+Few: 2 with elapsed time: F took: 92.02ms for gnm-3000-4500-1.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-3000-4500-1.txt
+None: -1 with elapsed time: N took: 0.11ms for gnm-3000-4500-1.txt
+Some: True with elapsed time: S took: 653.0ms for gnm-3000-4500-1.txt
+
+---- Instance: gnm-3000-6000-0.txt, n: 3000 ----
+Alternate: False with elapsed time: A took: 0.02ms for gnm-3000-6000-0.txt
+Few: 0 with elapsed time: F took: 130.94ms for gnm-3000-6000-0.txt
+Many: ? with elapsed time: M took: 0.01ms for gnm-3000-6000-0.txt
+None: 6 with elapsed time: N took: 10.74ms for gnm-3000-6000-0.txt
+Some: True with elapsed time: S took: 470.03ms for gnm-3000-6000-0.txt
+
+---- Instance: gnm-3000-6000-1.txt, n: 3000 ----
+Alternate: False with elapsed time: A took: 0.08ms for gnm-3000-6000-1.txt
+Few: 1 with elapsed time: F took: 130.26ms for gnm-3000-6000-1.txt
+Many: ? with elapsed time: M took: 0.02ms for gnm-3000-6000-1.txt
+None: -1 with elapsed time: N took: 0.13ms for gnm-3000-6000-1.txt
+Some: True with elapsed time: S took: 481.16ms for gnm-3000-6000-1.txt
+
+---- Instance: gnm-4000-6000-0.txt, n: 4000 ----
+Alternate: False with elapsed time: A took: 0.04ms for gnm-4000-6000-0.txt
+Few: 0 with elapsed time: F took: 164.41ms for gnm-4000-6000-0.txt
+Many: ? with elapsed time: M took: 0.02ms for gnm-4000-6000-0.txt
+None: 7 with elapsed time: N took: 69.94ms for gnm-4000-6000-0.txt
+Some: True with elapsed time: S took: 1.88s for gnm-4000-6000-0.txt
+
+---- Instance: gnm-4000-6000-1.txt, n: 4000 ----
+Alternate: False with elapsed time: A took: 101.81ms for gnm-4000-6000-1.txt
+Few: 1 with elapsed time: F took: 164.13ms for gnm-4000-6000-1.txt
+Many: ? with elapsed time: M took: 0.02ms for gnm-4000-6000-1.txt
+None: -1 with elapsed time: N took: 0.15ms for gnm-4000-6000-1.txt
+Some: True with elapsed time: S took: 636.38ms for gnm-4000-6000-1.txt
+
+---- Instance: gnm-4000-8000-0.txt, n: 4000 ----
+Alternate: False with elapsed time: A took: 0.02ms for gnm-4000-8000-0.txt
+Few: 0 with elapsed time: F took: 232.22ms for gnm-4000-8000-0.txt
+Many: ? with elapsed time: M took: 0.02ms for gnm-4000-8000-0.txt
+None: 5 with elapsed time: N took: 7.79ms for gnm-4000-8000-0.txt
+Some: True with elapsed time: S took: 860.07ms for gnm-4000-8000-0.txt
+
+---- Instance: gnm-4000-8000-1.txt, n: 4000 ----
+Alternate: True with elapsed time: A took: 228.89ms for gnm-4000-8000-1.txt
+Few: 1 with elapsed time: F took: 232.09ms for gnm-4000-8000-1.txt
+Many: ? with elapsed time: M took: 0.02ms for gnm-4000-8000-1.txt
+None: -1 with elapsed time: N took: 0.19ms for gnm-4000-8000-1.txt
+Some: True with elapsed time: S took: 660.28ms for gnm-4000-8000-1.txt
+
+---- Instance: gnm-5000-10000-0.txt, n: 5000 ----
+Alternate: False with elapsed time: A took: 0.15ms for gnm-5000-10000-0.txt
+Few: 1 with elapsed time: F took: 353.21ms for gnm-5000-10000-0.txt
+Many: ? with elapsed time: M took: 0.02ms for gnm-5000-10000-0.txt
+None: -1 with elapsed time: N took: 0.07ms for gnm-5000-10000-0.txt
+Some: True with elapsed time: S took: 1.02s for gnm-5000-10000-0.txt
+
+---- Instance: gnm-5000-10000-1.txt, n: 5000 ----
+Alternate: True with elapsed time: A took: 360.46ms for gnm-5000-10000-1.txt
+Few: 2 with elapsed time: F took: 350.81ms for gnm-5000-10000-1.txt
+Many: ? with elapsed time: M took: 0.02ms for gnm-5000-10000-1.txt
+None: -1 with elapsed time: N took: 0.18ms for gnm-5000-10000-1.txt
+Some: True with elapsed time: S took: 1.02s for gnm-5000-10000-1.txt
+
+---- Instance: gnm-5000-7500-0.txt, No path from '0' to '1'
+---- Instance: gnm-5000-7500-1.txt, No path from '0' to '1'
+---- Instance: grid-25-0.txt, n: 625 ----
+Alternate: True with elapsed time: A took: 7.85ms for grid-25-0.txt
+Few: 10 with elapsed time: F took: 7.37ms for grid-25-0.txt
+Many: ? with elapsed time: M took: 0.0ms for grid-25-0.txt
+None: 324 with elapsed time: N took: 3.45ms for grid-25-0.txt
+Some: True with elapsed time: S took: 39.98ms for grid-25-0.txt
+
+---- Instance: grid-25-1.txt, n: 625 ----
+Alternate: True with elapsed time: A took: 7.32ms for grid-25-1.txt
+Few: 8 with elapsed time: F took: 7.42ms for grid-25-1.txt
+Many: ? with elapsed time: M took: 0.0ms for grid-25-1.txt
+None: 123 with elapsed time: N took: 3.62ms for grid-25-1.txt
+Some: True with elapsed time: S took: 40.01ms for grid-25-1.txt
+
+---- Instance: grid-25-2.txt, n: 625 ----
+Alternate: True with elapsed time: A took: 7.81ms for grid-25-2.txt
+Few: 10 with elapsed time: F took: 7.44ms for grid-25-2.txt
+Many: ? with elapsed time: M took: 0.01ms for grid-25-2.txt
+None: -1 with elapsed time: N took: 0.09ms for grid-25-2.txt
+Some: True with elapsed time: S took: 40.63ms for grid-25-2.txt
+
+---- Instance: grid-50-0.txt, n: 2500 ----
+Alternate: False with elapsed time: A took: 97.52ms for grid-50-0.txt
+Few: 12 with elapsed time: F took: 123.25ms for grid-50-0.txt
+Many: ? with elapsed time: M took: 0.01ms for grid-50-0.txt
+None: 1249 with elapsed time: N took: 63.26ms for grid-50-0.txt
+Some: True with elapsed time: S took: 666.91ms for grid-50-0.txt
+
+---- Instance: grid-50-1.txt, n: 2500 ----
+Alternate: False with elapsed time: A took: 92.55ms for grid-50-1.txt
+Few: 12 with elapsed time: F took: 126.64ms for grid-50-1.txt
+Many: ? with elapsed time: M took: 0.01ms for grid-50-1.txt
+None: 521 with elapsed time: N took: 64.4ms for grid-50-1.txt
+Some: True with elapsed time: S took: 657.2ms for grid-50-1.txt
+
+---- Instance: grid-50-2.txt, n: 2500 ----
+Alternate: False with elapsed time: A took: 98.58ms for grid-50-2.txt
+Few: 15 with elapsed time: F took: 121.03ms for grid-50-2.txt
+Many: ? with elapsed time: M took: 0.01ms for grid-50-2.txt
+None: -1 with elapsed time: N took: 0.08ms for grid-50-2.txt
+Some: True with elapsed time: S took: 761.9ms for grid-50-2.txt
+
+---- Instance: increase-n500-1.txt, n: 500 ----
+Alternate: False with elapsed time: A took: 54.02ms for increase-n500-1.txt
+Few: 1 with elapsed time: F took: 64.96ms for increase-n500-1.txt
+Many: 16 with elapsed time: M took: 2.12s for increase-n500-1.txt
+None: -1 with elapsed time: N took: 0.02ms for increase-n500-1.txt
+Some: True with elapsed time: S took: 2.1s for increase-n500-1.txt
+
+---- Instance: increase-n500-2.txt, n: 500 ----
+Alternate: False with elapsed time: A took: 43.98ms for increase-n500-2.txt
+Few: 0 with elapsed time: F took: 52.59ms for increase-n500-2.txt
+Many: 17 with elapsed time: M took: 2.34s for increase-n500-2.txt
+None: 1 with elapsed time: N took: 28.63ms for increase-n500-2.txt
+Some: True with elapsed time: S took: 2.35s for increase-n500-2.txt
+
+---- Instance: increase-n500-3.txt, n: 500 ----
+Alternate: False with elapsed time: A took: 82.12ms for increase-n500-3.txt
+Few: 0 with elapsed time: F took: 117.75ms for increase-n500-3.txt
+Many: 16 with elapsed time: M took: 1.87s for increase-n500-3.txt
+None: 1 with elapsed time: N took: 58.02ms for increase-n500-3.txt
+Some: True with elapsed time: S took: 1.84s for increase-n500-3.txt
+
+---- Instance: rusty-1-2000.txt, No path from 'begin' to 'ender'
+---- Instance: rusty-1-2500.txt, No path from 'begin' to 'ender'
+---- Instance: rusty-1-3000.txt, n: 3000 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-1-3000.txt
+Few: 0 with elapsed time: F took: 57.41ms for rusty-1-3000.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-1-3000.txt
+None: 14 with elapsed time: N took: 38.12ms for rusty-1-3000.txt
+Some: True with elapsed time: S took: 385.87ms for rusty-1-3000.txt
+
+---- Instance: rusty-1-3500.txt, n: 3500 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-1-3500.txt
+Few: 0 with elapsed time: F took: 97.42ms for rusty-1-3500.txt
+Many: ? with elapsed time: M took: 0.01ms for rusty-1-3500.txt
+None: 14 with elapsed time: N took: 70.73ms for rusty-1-3500.txt
+Some: True with elapsed time: S took: 622.55ms for rusty-1-3500.txt
+
+---- Instance: rusty-1-4000.txt, n: 4000 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-1-4000.txt
+Few: 0 with elapsed time: F took: 144.67ms for rusty-1-4000.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-1-4000.txt
+None: 13 with elapsed time: N took: 111.91ms for rusty-1-4000.txt
+Some: True with elapsed time: S took: 925.66ms for rusty-1-4000.txt
+
+---- Instance: rusty-1-4500.txt, n: 4500 ----
+Alternate: False with elapsed time: A took: 0.0ms for rusty-1-4500.txt
+Few: 0 with elapsed time: F took: 206.72ms for rusty-1-4500.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-1-4500.txt
+None: 7 with elapsed time: N took: 1.12ms for rusty-1-4500.txt
+Some: True with elapsed time: S took: 1.26s for rusty-1-4500.txt
+
+---- Instance: rusty-1-5000.txt, n: 5000 ----
+Alternate: False with elapsed time: A took: 0.0ms for rusty-1-5000.txt
+Few: 0 with elapsed time: F took: 296.83ms for rusty-1-5000.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-1-5000.txt
+None: 7 with elapsed time: N took: 1.8ms for rusty-1-5000.txt
+Some: True with elapsed time: S took: 1.69s for rusty-1-5000.txt
+
+---- Instance: rusty-1-5757.txt, n: 5757 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-1-5757.txt
+Few: 0 with elapsed time: F took: 461.68ms for rusty-1-5757.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-1-5757.txt
+None: 7 with elapsed time: N took: 29.6ms for rusty-1-5757.txt
+Some: True with elapsed time: S took: 2.04s for rusty-1-5757.txt
+
+---- Instance: rusty-2-2000.txt, n: 2000 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-2-2000.txt
+Few: 0 with elapsed time: F took: 233.36ms for rusty-2-2000.txt
+Many: ? with elapsed time: M took: 0.01ms for rusty-2-2000.txt
+None: 5 with elapsed time: N took: 213.68ms for rusty-2-2000.txt
+Some: True with elapsed time: S took: 275.04ms for rusty-2-2000.txt
+
+---- Instance: rusty-2-2500.txt, n: 2500 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-2-2500.txt
+Few: 0 with elapsed time: F took: 470.91ms for rusty-2-2500.txt
+Many: ? with elapsed time: M took: 0.01ms for rusty-2-2500.txt
+None: 4 with elapsed time: N took: 311.48ms for rusty-2-2500.txt
+Some: True with elapsed time: S took: 462.81ms for rusty-2-2500.txt
+
+---- Instance: rusty-2-3000.txt, n: 3000 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-2-3000.txt
+Few: 0 with elapsed time: F took: 814.54ms for rusty-2-3000.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-2-3000.txt
+None: 4 with elapsed time: N took: 677.01ms for rusty-2-3000.txt
+Some: True with elapsed time: S took: 750.32ms for rusty-2-3000.txt
+
+---- Instance: rusty-2-3500.txt, n: 3500 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-2-3500.txt
+Few: 0 with elapsed time: F took: 1.29s for rusty-2-3500.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-2-3500.txt
+None: 4 with elapsed time: N took: 1.12s for rusty-2-3500.txt
+Some: True with elapsed time: S took: 1.05s for rusty-2-3500.txt
+
+---- Instance: rusty-2-4000.txt, n: 4000 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-2-4000.txt
+Few: 0 with elapsed time: F took: 1.93s for rusty-2-4000.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-2-4000.txt
+None: 4 with elapsed time: N took: 1.71s for rusty-2-4000.txt
+Some: True with elapsed time: S took: 1.41s for rusty-2-4000.txt
+
+---- Instance: rusty-2-4500.txt, n: 4500 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-2-4500.txt
+Few: 0 with elapsed time: F took: 2.81s for rusty-2-4500.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-2-4500.txt
+None: 4 with elapsed time: N took: 2.03s for rusty-2-4500.txt
+Some: True with elapsed time: S took: 2.01s for rusty-2-4500.txt
+
+---- Instance: rusty-2-5000.txt, n: 5000 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-2-5000.txt
+Few: 0 with elapsed time: F took: 3.93s for rusty-2-5000.txt
+Many: ? with elapsed time: M took: 0.02ms for rusty-2-5000.txt
+None: 4 with elapsed time: N took: 3.02s for rusty-2-5000.txt
+Some: True with elapsed time: S took: 2.62s for rusty-2-5000.txt
+
+---- Instance: rusty-2-5757.txt, n: 5757 ----
+Alternate: False with elapsed time: A took: 0.01ms for rusty-2-5757.txt
+Few: 0 with elapsed time: F took: 6.06s for rusty-2-5757.txt
+Many: ? with elapsed time: M took: 0.03ms for rusty-2-5757.txt
+None: 4 with elapsed time: N took: 6.01s for rusty-2-5757.txt
+Some: True with elapsed time: S took: 3.79s for rusty-2-5757.txt
+
+---- Instance: smallworld-30-0.txt, n: 900 ----
+Alternate: False with elapsed time: A took: 0.01ms for smallworld-30-0.txt
+Few: 0 with elapsed time: F took: 15.1ms for smallworld-30-0.txt
+Many: ? with elapsed time: M took: 0.01ms for smallworld-30-0.txt
+None: 9 with elapsed time: N took: 12.32ms for smallworld-30-0.txt
+Some: True with elapsed time: S took: 107.42ms for smallworld-30-0.txt
+
+---- Instance: smallworld-30-1.txt, n: 900 ----
+Alternate: True with elapsed time: A took: 16.31ms for smallworld-30-1.txt
+Few: 2 with elapsed time: F took: 15.18ms for smallworld-30-1.txt
+Many: ? with elapsed time: M took: 0.01ms for smallworld-30-1.txt
+None: -1 with elapsed time: N took: 0.03ms for smallworld-30-1.txt
+Some: True with elapsed time: S took: 109.89ms for smallworld-30-1.txt
+
+---- Instance: smallworld-40-0.txt, n: 1600 ----
+Alternate: False with elapsed time: A took: 0.01ms for smallworld-40-0.txt
+Few: 0 with elapsed time: F took: 50.71ms for smallworld-40-0.txt
+Many: ? with elapsed time: M took: 0.01ms for smallworld-40-0.txt
+None: 8 with elapsed time: N took: 33.89ms for smallworld-40-0.txt
+Some: True with elapsed time: S took: 274.38ms for smallworld-40-0.txt
+
+---- Instance: smallworld-40-1.txt, n: 1600 ----
+Alternate: True with elapsed time: A took: 50.07ms for smallworld-40-1.txt
+Few: 1 with elapsed time: F took: 49.74ms for smallworld-40-1.txt
+Many: ? with elapsed time: M took: 0.06ms for smallworld-40-1.txt
+None: -1 with elapsed time: N took: 0.06ms for smallworld-40-1.txt
+Some: True with elapsed time: S took: 346.29ms for smallworld-40-1.txt
+
+---- Instance: smallworld-50-0.txt, n: 2500 ----
+Alternate: False with elapsed time: A took: 0.01ms for smallworld-50-0.txt
+Few: 0 with elapsed time: F took: 128.9ms for smallworld-50-0.txt
+Many: ? with elapsed time: M took: 0.01ms for smallworld-50-0.txt
+None: 3 with elapsed time: N took: 0.04ms for smallworld-50-0.txt
+Some: True with elapsed time: S took: 793.59ms for smallworld-50-0.txt
+
+---- Instance: smallworld-50-1.txt, n: 2500 ----
+Alternate: True with elapsed time: A took: 113.5ms for smallworld-50-1.txt
+Few: 2 with elapsed time: F took: 123.44ms for smallworld-50-1.txt
+Many: ? with elapsed time: M took: 0.01ms for smallworld-50-1.txt
+None: -1 with elapsed time: N took: 0.09ms for smallworld-50-1.txt
+Some: True with elapsed time: S took: 433.65ms for smallworld-50-1.txt
+
+---- Instance: wall-n-100.txt, n: 800 ----
+Alternate: False with elapsed time: A took: 0.0ms for wall-n-100.txt
+Few: 0 with elapsed time: F took: 5.49ms for wall-n-100.txt
+Many: ? with elapsed time: M took: 0.0ms for wall-n-100.txt
+None: 1 with elapsed time: N took: 0.0ms for wall-n-100.txt
+Some: False with elapsed time: S took: 58.88ms for wall-n-100.txt
+
+---- Instance: wall-n-1000.txt, n: 8000 ----
+Alternate: False with elapsed time: A took: 0.0ms for wall-n-1000.txt
+Few: 0 with elapsed time: F took: 457.81ms for wall-n-1000.txt
+Many: ? with elapsed time: M took: 0.04ms for wall-n-1000.txt
+None: 1 with elapsed time: N took: 0.03ms for wall-n-1000.txt
+Some: False with elapsed time: S took: 5.44s for wall-n-1000.txt
+
+---- Instance: wall-n-10000.txt, n: 80000 ----
+Alternate: False with elapsed time: A took: 0.0ms for wall-n-10000.txt
+Few: 0 with elapsed time: F took: 46.97s for wall-n-10000.txt
+Many: ? with elapsed time: M took: 0.53ms for wall-n-10000.txt
+None: 1 with elapsed time: N took: 0.48ms for wall-n-10000.txt
+Some: False with elapsed time: S took: 691.24s for wall-n-10000.txt
+
+---- Instance: wall-p-100.txt, n: 602 ----
+Alternate: False with elapsed time: A took: 0.02ms for wall-p-100.txt
+Few: 0 with elapsed time: F took: 3.51ms for wall-p-100.txt
+Many: ? with elapsed time: M took: 0.01ms for wall-p-100.txt
+None: 1 with elapsed time: N took: 0.01ms for wall-p-100.txt
+Some: True with elapsed time: S took: 47.43ms for wall-p-100.txt
+
+---- Instance: wall-p-1000.txt, n: 6002 ----
+Alternate: False with elapsed time: A took: 0.0ms for wall-p-1000.txt
+Few: 0 with elapsed time: F took: 264.99ms for wall-p-1000.txt
+Many: ? with elapsed time: M took: 0.04ms for wall-p-1000.txt
+None: 1 with elapsed time: N took: 0.03ms for wall-p-1000.txt
+Some: True with elapsed time: S took: 4.37s for wall-p-1000.txt
+
+---- Instance: wall-p-10000.txt, n: 60002 ----
+Alternate: False with elapsed time: A took: 0.0ms for wall-p-10000.txt
+Few: 0 with elapsed time: F took: 26.35s for wall-p-10000.txt
+Many: ? with elapsed time: M took: 0.5ms for wall-p-10000.txt
+None: 1 with elapsed time: N took: 0.38ms for wall-p-10000.txt
+Some: True with elapsed time: S took: 547.41s for wall-p-10000.txt
+
+---- Instance: wall-z-100.txt, n: 701 ----
+Alternate: False with elapsed time: A took: 0.02ms for wall-z-100.txt
+Few: 0 with elapsed time: F took: 4.53ms for wall-z-100.txt
+Many: ? with elapsed time: M took: 0.0ms for wall-z-100.txt
+None: 1 with elapsed time: N took: 0.01ms for wall-z-100.txt
+Some: False with elapsed time: S took: 43.45ms for wall-z-100.txt
+
+---- Instance: wall-z-1000.txt, n: 7001 ----
+Alternate: False with elapsed time: A took: 0.0ms for wall-z-1000.txt
+Few: 0 with elapsed time: F took: 349.83ms for wall-z-1000.txt
+Many: ? with elapsed time: M took: 0.04ms for wall-z-1000.txt
+None: 1 with elapsed time: N took: 0.03ms for wall-z-1000.txt
+Some: False with elapsed time: S took: 4.12s for wall-z-1000.txt
+
+---- Instance: wall-z-10000.txt, n: 70001 ----
+Alternate: False with elapsed time: A took: 0.01ms for wall-z-10000.txt
+Few: 0 with elapsed time: F took: 36.14s for wall-z-10000.txt
+Many: ? with elapsed time: M took: 0.51ms for wall-z-10000.txt
+None: 1 with elapsed time: N took: 0.45ms for wall-z-10000.txt
+Some: False with elapsed time: S took: 506.49s for wall-z-10000.txt
 
