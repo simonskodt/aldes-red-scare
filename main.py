@@ -30,7 +30,7 @@ def main(argv):
             should_visualize = True
             continue
         elif arg == '--help':
-            print_instructions
+            print_instructions()
         elif arg == '--file':
             file = argv[i+1]
             print(f"File: {file}")
