@@ -13,6 +13,6 @@ questions!
 
 ...
 
-## Input and Output
+## How to Run
 
 ...
