@@ -1,16 +1,36 @@
 # Red Scare
 
-Mandatory assignment in Algorithm Design choosing between and using known 
-algorithmic paradigms -- not about implementing  these paradigms.
+This repository contains the implementation of various algorithmic paradigms for 
+the mandatory assignment in Algorithm Design. The focus is on choosing and utilizing 
+well-known algorithmic paradigms, rather than implementing them from scratch.
 
 ## How to Run
 
-To make sure you have the correct dependencies, please run `pip install -r requirements.txt`.
+To ensure you have the necessary dependencies, execute the following command:
 
-All the programs to solve the different problems are in their own classes under `problems`.
+```bash
+pip install -r requirements.txt
+```
 
-To make the `results.txt` you run `python main.py --all`. This will create the file.
+All the programs for solving different problems are organized into separate classes 
+under the `problems` directory.
 
-If you want to run the programs on a specific file, you run `python main.py --file FILENAME`.
+To generate the `results.txt` file, run the following command:
 
-To see the full help description, you can run `python main.py --help`.
+```bash
+python main.py --all
+```
+
+This command will create the result file.
+
+If you wish to run the programs on a specific file, use the following command:
+
+```bash
+python main.py --file FILENAME
+```
+
+For a comprehensive description of available options, refer to the help command:
+
+```bash
+python main.py --help
+```
