@@ -27,7 +27,7 @@ def remove_odd(g, red_keys, s,t):
 
     return new_g
 
-# Based on code from old Kattis exercise: https://github.com/PhilipFlyvholm/kattis/blob/main/Waif/Waif.py#L51
+#Inspired by a previous assignment https://github.com/simonskodt/aldes-flow-behind-enemy-lines/blob/main/flow.py
 def bfs(g, start, end):
     if g is None or start not in g or end not in g:
         return None
