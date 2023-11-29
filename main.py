@@ -50,9 +50,8 @@ def main(argv):
             for file in p.find_all_files():
                 print(f"-- {file} --")
                 graph, red_keys, s, t, is_directed, has_no_incoming_edges = p.parse_file(file)
-                #if len(graph) >= 500:
-                #    delegate_problem(graph, red_keys, s, t, is_directed,file, has_no_incoming_edges)
-                print(some.is_DAG(graph,has_no_incoming_edges))
+                if len(graph) >= 500: 
+                    delegate_problem(graph, red_keys, s, t, is_directed,file, has_no_incoming_edges)
             break
         else:
             print("Invalid option")
@@ -71,18 +70,9 @@ def print_instructions():
     print("\t--all (run all implementations on files with n >= 500)\n")
     print("< =============================================================== >\n")
     sys.exit(2)
-
-def printTimeTaken(start_time, problem, instance_name):
-    end_time = (time.time() - start_time)
-    if end_time < 1:
-        return f"{problem} took: {round(end_time*1000,2)}ms for {instance_name}"
-    else:
-        return f"{problem} took: {round(end_time,2)}s for {instance_name}"
-
 # Test cases: bht,common-1-5757,common-2-5757,gnm-5000-10000-0,gnm-5000-10000-1,dodecahedron,grid-50-0,grid-50-1,grid-50-2,increase-n-500-1,increase-n-500-2,increase-n-500-3,p3,rusty-1-5757,rusty-2-5757,ski-level20-1,ski-level20-2,ski-level20-3,small-world-50-0,small-world-50-1,wall-n-10000,wall-p-10000,wall-z-10000
 
 def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_no_directed_edges):
-    header_for_print = f"---- Instance: {instance_name}, n: {len(graph)} ----\n"
     if alternate.bfs(graph, s, t) is None:
         print_no_path(instance_name, s, t)
         return
@@ -103,8 +93,9 @@ def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_no_d
     print(s_string)
 
     # build strings
-    print_string = header_for_print + a_string + f_string + n_string + s_string + "\n"
-    result_string = f"{instance_name}, {len(graph)}, {A}, {F}, {N}, {S}\n"
+    header_for_print = f"---- Instance: {instance_name}, n: {len(graph)} ----\n"
+    print_string = header_for_print + a_string + f_string + m_string + n_string + s_string  + "\n"
+    result_string = f"{instance_name}, {len(graph)}, {A}, {F}, {M}, {N}, {S}\n"
 
     results_file.write(result_string)
     log_file.write(print_string)
@@ -122,6 +113,13 @@ def wrap_check_problem(function, problem_name, instance_name):
     elapsed_time = printTimeTaken(start_time, problem_name[0], instance_name)
     problem_string = f"{problem_name}: {problem} with elapsed time: {elapsed_time}\n"
     return problem_string, problem
+
+def printTimeTaken(start_time, problem, instance_name):
+    end_time = (time.time() - start_time)
+    if end_time < 1:
+        return f"{problem} took: {round(end_time*1000,2)}ms for {instance_name}"
+    else:
+        return f"{problem} took: {round(end_time,2)}s for {instance_name}"
 
 def print_no_path(instance_name, s, t):
     no_path = f"No path from '{s}' to '{t}'"
