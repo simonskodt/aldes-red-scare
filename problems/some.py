@@ -9,6 +9,8 @@ def check_some_problem(g, red_keys, s, t, is_directed, has_no_incoming_edges):
         graph = augment_graph(g, red_keys, s, t)
         distances, _ = bellman_ford(graph, s)
         dist = distances[t]
+        if t in red_keys:
+            dist -= 1
         return dist < 0
     return "?" # NP-Hard
 
