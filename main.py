@@ -87,29 +87,19 @@ def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_no_d
         print_no_path(instance_name, s, t)
         return
     
-    a_start_time = time.time()
-    A = alternate.check_alternate_problem(graph, red_keys,s,t)
-    elapsed_time_A = printTimeTaken(a_start_time, "A", instance_name)
-    a_string = f"Alternate: {A} with elapsed time: {elapsed_time_A}\n"
+    a_string, A = wrap_check_problem(lambda: alternate.check_alternate_problem(graph, red_keys,s,t), "Alternate", instance_name)
     print(a_string)
-    f_start_time = time.time()
-    F = few.check_few_problem(graph, red_keys, s, t)
-    elapsed_time_F = printTimeTaken(f_start_time, "F", instance_name)
-    f_string = f"Few: {F} with elapsed time: {elapsed_time_F}\n"
+
+    f_string, F = wrap_check_problem(lambda: few.check_few_problem(graph, red_keys, s, t), "Few", instance_name)
     print(f_string)
 
-    # M = many.check_many_problem(graph, red_keys,s,t)
-    
-    n_start_time = time.time()
-    N = none.check_none_problem(graph, red_keys, s, t)
-    elapsed_time_N = printTimeTaken(n_start_time, "N", instance_name)
-    n_string = f"None: {N} with elapsed time: {elapsed_time_N}\n"
+    m_string, M = wrap_check_problem(lambda: many.check_many_problem(graph, red_keys, s, t,is_directed, has_no_directed_edges), "Many", instance_name)
+    print(m_string)
+
+    n_string, N = wrap_check_problem(lambda: none.check_none_problem(graph, red_keys, s, t), "None", instance_name)
     print(n_string)
     
-    s_start_time = time.time()
-    S = some.check_some_problem(graph, red_keys, s, t, is_directed, has_no_directed_edges)
-    elapsed_time_S = printTimeTaken(s_start_time, "S", instance_name)
-    s_string = f"Some: {S} with elapsed time: {elapsed_time_S}\n"
+    s_string, S = wrap_check_problem(lambda: some.check_some_problem(graph, red_keys, s, t, is_directed, has_no_directed_edges), "Some", instance_name)
     print(s_string)
 
     # build strings
@@ -125,6 +115,13 @@ def delegate_problem(graph, red_keys, s, t, is_directed, instance_name, has_no_d
 
 def visualize(graph, red_keys, s, t, is_directed):
     gv.visualize(graph, red_keys, s, t, is_directed)
+
+def wrap_check_problem(function, problem_name, instance_name):
+    start_time = time.time()
+    problem = function()
+    elapsed_time = printTimeTaken(start_time, problem_name[0], instance_name)
+    problem_string = f"{problem_name}: {problem} with elapsed time: {elapsed_time}\n"
+    return problem_string, problem
 
 def print_no_path(instance_name, s, t):
     no_path = f"No path from '{s}' to '{t}'"
